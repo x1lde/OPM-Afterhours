@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OPM Afterhours — a cinematic Filipino music discovery project built with HTML and CSS.">
+  <title>Arthur Nery | OPM Afterhours</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <!-- Shared navigation: ordinary links work without scripting. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span>OPM</span> Afterhours</a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#artists">Artists</a>
+        <a href="../index.html#genres">Genres</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="page-shell artist-page">
+    <a class="back-link" href="../index.html#artists">← Artist directory</a>
+    <!-- Artist identity and static listening-room composition. -->
+    <section class="artist-room" aria-labelledby="artist-title">
+
+      <div class="artist-copy"><p class="source-note">No. 02 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">Arthur Nery</h1><p class="biography">Arthur Nery is a Filipino singer and songwriter.</p>
+        <ul class="genre-labels" aria-label="Artist genres"><li>OPM</li></ul>
+        <div class="artist-portrait">Artist portrait unavailable</div>
+        <p class="small-note">Three featured slots · project selections</p>
+      </div>
+      <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><span>OPM<br>Afterhours</span></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
+    </section>
+    <!-- Every supplied recording uses native audio. Missing media has no player. -->
+    <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Playback ends when you navigate to another page.</p></div>
+      <ol class="track-grid">
+        <li><article class="track-card">
+          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 01</p><h3>Pagsamo</h3><p class="track-credit">Arthur Nery</p>
+          <p class="availability">Audio unavailable</p>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Pagsamo information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+        </article></li>
+        <li><article class="track-card">
+          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 02</p><h3>Higa</h3><p class="track-credit">Arthur Nery</p>
+          <p class="availability">Audio unavailable</p>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Higa information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+        </article></li>
+        <li><article class="track-card">
+          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 03</p><h3>Binhi</h3><p class="track-credit">Arthur Nery</p>
+          <p class="availability">Audio unavailable</p>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Binhi information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+        </article></li>
+      </ol>
+    </section>
+    <!-- Adjacent pages wrap around the ten-artist catalog. These remain visible on mobile. -->
+    <nav class="adjacent-navigation" aria-label="Adjacent artists">
+      <a class="adjacent-link" href="cup-of-joe.html"><span class="eyebrow">Previous artist</span><span>← Cup of Joe</span></a>
+      <a class="adjacent-link" href="fitterkarma.html"><span class="eyebrow">Next artist</span><span>fitterkarma →</span></a>
+    </nav>
+    <nav class="floating-navigation" aria-label="Desktop artist navigation">
+      <a class="artist-arrow previous" href="cup-of-joe.html" aria-label="Previous artist: Cup of Joe">←</a>
+      <a class="artist-arrow next" href="fitterkarma.html" aria-label="Next artist: fitterkarma">→</a>
+    </nav>
+  </main>
+  <footer class="site-footer"><p>OPM Afterhours · Filipino music, after dark.</p><a href="../index.html#artists">Explore the artist directory</a></footer>
+</body>
+</html>

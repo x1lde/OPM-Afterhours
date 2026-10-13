@@ -1,0 +1,40 @@
+/* Tablet breakpoint: fewer directory columns and a balanced listening room. */
+@media (max-width: 1000px) {
+  .hero { gap: 2rem; min-height: auto; padding-block: 4rem; }
+  .artist-grid, .genre-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .artist-room { padding: 2rem; gap: 2rem; min-height: auto; }
+  .track-grid { grid-template-columns: minmax(0, 1fr); }
+  .track-card { display: grid; grid-template-columns: 140px minmax(0, 1fr); column-gap: 1.5rem; }
+  .track-artwork, .artwork-placeholder { grid-column: 1; grid-row: 1 / 7; margin-bottom: 0; }
+  .track-card > :not(.track-artwork):not(.artwork-placeholder) { grid-column: 2; }
+  .section-heading { flex-direction: column; align-items: start; gap: 1rem; }
+}
+/* Phones: visible navigation, stacked content, and comfortable touch targets. */
+@media (max-width: 600px) {
+  :root { --gutter: 1.25rem; }
+  .header-inner { flex-direction: column; align-items: start; gap: 0.5rem; padding-block: 1rem; }
+  .site-header nav { width: 100%; justify-content: space-between; gap: 0.5rem; }
+  .site-header nav a { font-size: 0.875rem; min-width: 44px; }
+  .brand { font-size: 1.6rem; }
+  .hero, .artist-room { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: 3rem; gap: 3rem; }
+  .hero-record .vinyl, .record-region .vinyl { width: min(100%, 300px); }
+  .artist-grid, .genre-grid { grid-template-columns: minmax(0, 1fr); }
+  .directory { padding-block: 3rem; }
+  .artist-page { padding-inline: var(--gutter); }
+  .artist-room { padding: 1.25rem; }
+  .artist-copy h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .track-card { display: block; padding: 1rem; }
+  .track-artwork, .artwork-placeholder { margin-bottom: 1.5rem; }
+  .floating-navigation { display: none; }
+  .adjacent-navigation { flex-direction: column; gap: 0.5rem; }
+  .adjacent-link { border-bottom: 1px solid var(--border); padding: 1rem 0; }
+  .adjacent-link:last-child { text-align: left; }
+  .site-footer { flex-direction: column; }
+}
+/* CSS suppresses decorative video visually; native audio remains available.
+   HTML/CSS cannot conditionally pause the video or prevent its download. */
+@media (prefers-reduced-motion: reduce) {
+  .background-video { display: none; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

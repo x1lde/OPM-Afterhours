@@ -1,0 +1,107 @@
+/* Shared theme: values preserved from the original OPM Afterhours design. */
+:root {
+  color-scheme: dark;
+  --background: #111012;
+  --surface: #181619;
+  --raised: #292329;
+  --text: #f1e9e7;
+  --muted: #bcb4b9;
+  --accent: #cc98a7;
+  --border: #383036;
+  --serif: "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, sans-serif;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+}
+/* Basic sizing and readable typography. No external fonts are needed. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--background); color: var(--text); font-family: var(--sans); line-height: 1.65; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; }
+h1 { font-size: clamp(3rem, 5.6vw, 6.5rem); letter-spacing: -0.04em; }
+h2 { font-size: clamp(2rem, 3.1vw, 3.5rem); letter-spacing: -0.025em; }
+h3 { font-size: 1.65rem; }
+a { color: inherit; text-underline-offset: 0.3em; }
+a:hover { color: var(--accent); }
+a, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+img { display: block; max-width: 100%; object-fit: cover; }
+section[id] { scroll-margin-top: 1rem; }
+.page-shell { width: min(100%, 1600px); margin: auto; padding: 0 var(--gutter); }
+.eyebrow { font-family: var(--sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); }
+.small-note, .source-note { color: var(--muted); font-size: 0.875rem; }
+.source-note a { color: var(--accent); }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 10; padding: 0.75rem; background: var(--accent); color: var(--background); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+/* Flexbox allows the wordmark and ordinary navigation links to share a row. */
+.site-header { border-bottom: 1px solid var(--border); }
+.header-inner { width: min(100%, 1600px); padding: 1.25rem var(--gutter); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.brand { font-family: var(--serif); font-size: 1.8rem; text-decoration: none; white-space: nowrap; }
+.brand span { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 1.75rem; }
+.site-header nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+/* Grid forms the editorial hero and artist room; minmax prevents text overflow. */
+.hero { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 4rem; align-items: center; padding: 6rem 0; min-height: 650px; }
+.hero h1 { margin: 1rem 0 1.5rem; }
+.intro { max-width: 42ch; color: var(--muted); font-size: 1.1rem; }
+.text-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 2rem; color: var(--accent); }
+.hero-record, .record-region { text-align: center; }
+.hero-record .small-note, .record-region .small-note { margin-top: 1.5rem; }
+/* Static vinyl: concentric CSS grooves surround a center label. No playback state. */
+.vinyl { width: min(100%, 450px); aspect-ratio: 1; border-radius: 50%; margin: auto; position: relative; display: grid; place-items: center; border: 1px solid #393438; background: repeating-radial-gradient(circle, #121113 0, #121113 3px, #282428 4px, #121113 5px); }
+.vinyl::after { content: ""; position: absolute; width: 2.5%; aspect-ratio: 1; border-radius: 50%; background: var(--background); border: 1px solid #a88992; }
+.vinyl-label { width: 34%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: #65444f; color: var(--text); font-family: var(--serif); font-size: clamp(0.9rem, 2vw, 1.5rem); line-height: 1.3; text-align: center; }
+.vinyl-label img { width: 100%; height: 100%; }
+.directory { padding: 4rem 0; border-top: 1px solid var(--border); }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 1rem; }
+.section-heading h2 { margin-top: 0.65rem; }
+.section-intro { margin-bottom: 2rem; color: var(--muted); max-width: 65ch; }
+/* Artist and track cards use simple equal-width Grid columns. */
+.artist-grid, .track-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; list-style: none; padding: 0; margin: 0; }
+.artist-card { display: block; text-decoration: none; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); height: 100%; }
+.portrait-placeholder { background: var(--surface); aspect-ratio: 4 / 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; color: var(--muted); font-size: 0.8rem; }
+.portrait-number { font-family: var(--serif); font-size: 5rem; line-height: 1; color: var(--accent); }
+.card-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-top: 1rem; }
+.artist-card p { margin-top: 0.5rem; color: var(--muted); }
+.card-link { display: inline-block; margin-top: 1rem; color: var(--accent); }
+.genre-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.genre-group { padding: 1.5rem 0; border-top: 1px solid var(--border); }
+.genre-group ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.genre-group a { display: inline-flex; align-items: center; min-height: 44px; color: var(--muted); }
+.about { max-width: 75ch; }
+.about p:not(.eyebrow) { color: var(--muted); margin-top: 1.5rem; }
+.back-link { display: inline-flex; align-items: center; min-height: 44px; margin: 1.25rem 0; color: var(--muted); }
+.artist-room { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 3rem; padding: 3rem; background: var(--surface); min-height: 560px; }
+/* Absolute positioning crops muted video inside the charcoal room. The overlay keeps text readable. */
+.background-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -2; pointer-events: none; pointer-events: none; pointer-events: none; }
+.artist-room::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(17 16 18 / 88%); }
+.artist-copy h1 { margin: 1.2rem 0; overflow-wrap: anywhere; }
+.biography { max-width: 45ch; color: var(--muted); font-size: 1.1rem; }
+.genre-labels { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.genre-labels li { border: 1px solid #67545e; padding: 0.2rem 0.7rem; font-size: 0.875rem; color: var(--muted); }
+.artist-portrait { display: inline-flex; align-items: center; min-height: 72px; padding: 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; margin-bottom: 1rem; }
+.tracks-section { padding: 3rem 0; }
+.track-grid { margin-top: 2rem; }
+.track-card { min-width: 0; height: 100%; padding: 1.25rem; background: var(--surface); }
+.track-artwork, .artwork-placeholder { width: 100%; aspect-ratio: 1; height: auto; margin-bottom: 1.5rem; }
+.artwork-placeholder { display: grid; place-items: center; background: var(--raised); color: var(--muted); font-size: 0.875rem; }
+.track-card h3 { margin: 0.65rem 0; overflow-wrap: anywhere; }
+.track-credit { color: var(--muted); }
+.availability { color: var(--accent); font-size: 0.875rem; margin: 1rem 0; }
+/* The browser draws accessible playback, seek and volume controls. */
+audio { width: 100%; max-width: 100%; min-width: 0; display: block; }
+.song-information { border-top: 1px solid var(--border); margin-top: 1.5rem; }
+summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--muted); }
+.information-scroll { max-height: 14rem; overflow-y: auto; padding: 0.75rem 0.5rem; color: var(--muted); }
+/* Actual links replace gallery buttons and swipe handling. */
+.adjacent-navigation { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem 0 3rem; border-top: 1px solid var(--border); }
+.adjacent-link { display: flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 0.75rem 0; text-decoration: none; }
+.adjacent-link:last-child { text-align: right; }
+.artist-arrow { position: fixed; top: 50%; transform: translateY(-50%); z-index: 4; width: 44px; height: 44px; display: grid; place-items: center; background: var(--surface); color: var(--accent); border: 1px solid #67545e; border-radius: 50%; text-decoration: none; font-size: 1.4rem; }
+.artist-arrow.previous { left: 0.5rem; }
+.artist-arrow.next { right: 0.5rem; }
+.artist-page { padding-inline: max(var(--gutter), 4rem); }
+.site-footer { border-top: 1px solid var(--border); padding: 2rem var(--gutter); color: var(--muted); display: flex; justify-content: space-between; gap: 1rem; font-size: 0.875rem; }
+
+/* Some browsers show fallback video controls when scripting is disabled.
+   This video is decoration; its controls must not compete with native audio. */
+.background-video::-webkit-media-controls { display: none !important; }

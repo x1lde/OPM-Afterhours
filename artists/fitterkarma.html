@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OPM Afterhours — a cinematic Filipino music discovery project built with HTML and CSS.">
+  <title>fitterkarma | OPM Afterhours</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <!-- Shared navigation: ordinary links work without scripting. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span>OPM</span> Afterhours</a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#artists">Artists</a>
+        <a href="../index.html#genres">Genres</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1" class="page-shell artist-page">
+    <a class="back-link" href="../index.html#artists">← Artist directory</a>
+    <!-- Artist identity and static listening-room composition. -->
+    <section class="artist-room" aria-labelledby="artist-title">
+
+      <div class="artist-copy"><p class="source-note">No. 03 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">fitterkarma</h1><p class="biography">fitterkarma is a Filipino independent art rock band.</p>
+        <ul class="genre-labels" aria-label="Artist genres"><li>OPM</li><li>Art Rock</li></ul>
+        <div class="artist-portrait">Artist portrait unavailable</div>
+        <p class="small-note">Three featured slots · project selections</p>
+      </div>
+      <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><span>OPM<br>Afterhours</span></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
+    </section>
+    <!-- Every supplied recording uses native audio. Missing media has no player. -->
+    <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Playback ends when you navigate to another page.</p></div>
+      <ol class="track-grid">
+        <li><article class="track-card">
+          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 01</p><h3>Kalapastangan</h3><p class="track-credit">fitterkarma</p>
+          <p class="availability">Audio unavailable</p>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Kalapastangan information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+        </article></li>
+        <li><article class="track-card">
+          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 02</p><h3>Pag-Ibig ay Kanibalismo II</h3><p class="track-credit">fitterkarma</p>
+          <p class="availability">Audio unavailable</p>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Pag-Ibig ay Kanibalismo II information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+        </article></li>
+        <li><article class="track-card">
+          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 03</p><h3>maryclaire</h3><p class="track-credit">fitterkarma</p>
+          <p class="availability">Audio unavailable</p>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="maryclaire information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+        </article></li>
+      </ol>
+    </section>
+    <!-- Adjacent pages wrap around the ten-artist catalog. These remain visible on mobile. -->
+    <nav class="adjacent-navigation" aria-label="Adjacent artists">
+      <a class="adjacent-link" href="arthur-nery.html"><span class="eyebrow">Previous artist</span><span>← Arthur Nery</span></a>
+      <a class="adjacent-link" href="ben-and-ben.html"><span class="eyebrow">Next artist</span><span>Ben&amp;Ben →</span></a>
+    </nav>
+    <nav class="floating-navigation" aria-label="Desktop artist navigation">
+      <a class="artist-arrow previous" href="arthur-nery.html" aria-label="Previous artist: Arthur Nery">←</a>
+      <a class="artist-arrow next" href="ben-and-ben.html" aria-label="Next artist: Ben&amp;Ben">→</a>
+    </nav>
+  </main>
+  <footer class="site-footer"><p>OPM Afterhours · Filipino music, after dark.</p><a href="../index.html#artists">Explore the artist directory</a></footer>
+</body>
+</html>
