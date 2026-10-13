@@ -5,7 +5,7 @@
   .artist-room { padding: 2rem; gap: 2rem; min-height: auto; }
   .track-grid { grid-template-columns: minmax(0, 1fr); }
   .track-card { display: grid; grid-template-columns: 140px minmax(0, 1fr); column-gap: 1.5rem; }
-  .track-artwork, .artwork-placeholder { grid-column: 1; grid-row: 1 / 7; margin-bottom: 0; }
+  .track-artwork, .artwork-placeholder { grid-column: 1; grid-row: 1 / span 12; margin-bottom: 0; }
   .track-card > :not(.track-artwork):not(.artwork-placeholder) { grid-column: 2; }
   .section-heading { flex-direction: column; align-items: start; gap: 1rem; }
 }
@@ -37,4 +37,16 @@
 @media (prefers-reduced-motion: reduce) {
   .background-video { display: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Long biographies and platform labels must shrink with their grid column. */
+@media (max-width: 1000px) and (min-width: 601px) {
+  .track-card { align-items: start; }
+  .artwork-title { font-size: 1.1rem; }
+  .artwork-placeholder .small-note { font-size: 0.75rem; }
+}
+@media (max-width: 600px) {
+  .artist-portrait.portrait-placeholder { width: 100%; }
+  .breadcrumb { gap: 0.5rem; }
+  .card-heading { flex-wrap: wrap; }
 }

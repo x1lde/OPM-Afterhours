@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="OPM Afterhours — a cinematic Filipino music discovery project built with HTML and CSS.">
-  <title>fitterkarma | OPM Afterhours</title>
-  <link rel="icon" href="data:,">
+  <meta name="description" content="Discover Manila art rock band fitterkarma through its story, recording credits, and official links for Kalapastangan, Pag-Ibig ay Kanibalismo II, and maryclaire.">
+  <title>fitterkarma — Songs &amp; Artist Story | OPM Afterhours</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
@@ -17,20 +17,21 @@
       <a class="brand" href="../index.html"><span>OPM</span> Afterhours</a>
       <nav aria-label="Main navigation">
         <a href="../index.html">Home</a>
-        <a href="../index.html#artists">Artists</a>
+        <a class="nav-active" href="../index.html#artists">Artists</a>
         <a href="../index.html#genres">Genres</a>
         <a href="../index.html#about">About</a>
       </nav>
     </div>
   </header>
   <main id="main" tabindex="-1" class="page-shell artist-page">
-    <a class="back-link" href="../index.html#artists">← Artist directory</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a class="back-link" href="../index.html#artists">← Artist directory</a><span aria-hidden="true">/</span><a class="current-artist" href="fitterkarma.html" aria-current="page">fitterkarma</a></nav>
     <!-- Artist identity and static listening-room composition. -->
     <section class="artist-room" aria-labelledby="artist-title">
 
-      <div class="artist-copy"><p class="source-note">No. 03 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">fitterkarma</h1><p class="biography">fitterkarma is a Filipino independent art rock band.</p>
+      <div class="artist-copy"><p class="source-note">No. 03 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">fitterkarma</h1><!-- Original biography summary; research references are in docs/content-sources.md. -->
+        <div class="biography"><p>fitterkarma is a Manila-based independent art rock band that developed from Joao de Leon’s solo project into a full group in 2023. Its members met as Music Production students at De La Salle-College of Saint Benilde. De Leon handles vocals and guitar, joined by bassist and backing vocalist Soph Miranda, drummer Sanders Bayas, and guitarist Mikee Mendoza, also known as LORY.</p><p>The group works with dark imagery, unusual storytelling, and arrangements that move between acoustic and electric textures. Kalapastangan appeared in 2023, followed by Pag-Ibig ay Kanibalismo II in 2025; both later attracted substantial attention on Philippine charts. The 2026 single maryclaire adds a live string quartet to this musical vocabulary. In interviews, the band emphasizes creative growth rather than repeating a successful formula, bringing an exploratory approach to the wider conversation around Filipino rock.</p></div>
         <ul class="genre-labels" aria-label="Artist genres"><li>OPM</li><li>Art Rock</li></ul>
-        <div class="artist-portrait">Artist portrait unavailable</div>
+        <div class="artist-portrait portrait-placeholder"><span class="portrait-number" aria-hidden="true">03</span><span>fitterkarma</span><span class="small-note">Portrait awaiting an authorized image</span></div>
         <p class="small-note">Three featured slots · project selections</p>
       </div>
       <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><span>OPM<br>Afterhours</span></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
@@ -39,19 +40,25 @@
     <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Playback ends when you navigate to another page.</p></div>
       <ol class="track-grid">
         <li><article class="track-card">
-          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 01</p><h3>Kalapastangan</h3><p class="track-credit">fitterkarma</p>
-          <p class="availability">Audio unavailable</p>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Kalapastangan information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+          <div class="artwork-placeholder"><span class="artwork-artist">fitterkarma</span><span class="artwork-title">Kalapastangan</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 01</p><h3>Kalapastangan</h3><p class="track-credit">fitterkarma</p>
+          <p class="availability">Local audio not supplied</p>
+          <!-- Regular platform links work without scripts or embedded players. -->
+          <div class="listening-links"><a href="https://open.spotify.com/track/1jrTQNEEO8IUy0lu5PSUIt" target="_blank" rel="noopener noreferrer" aria-label="Listen to Kalapastangan by fitterkarma on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=FpJxPzveHzA" target="_blank" rel="noopener noreferrer" aria-label="Watch Kalapastangan by fitterkarma on YouTube — official audio (opens in a new tab)">Watch on YouTube <span class="link-format">official audio</span></a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Kalapastangan information"><dl class="track-metadata"><div><dt>Performer</dt><dd>fitterkarma</dd></div><div><dt>Release</dt><dd>November 24, 2023</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Producer</dt><dd>Joao De Leon</dd></div></dl><p class="song-description">Kalapastangan was fitterkarma’s only single released in 2023. It later found a larger audience after Pag-Ibig ay Kanibalismo II drew attention to the group. The licensed official audio preserves this earlier recording rather than substituting a live cover or another artist’s version.</p><p class="content-reference"><a href="https://billboardphilippines.com/market/chart-beat/fitterkarma-kalapastangan-enters-the-philippines-hot-100-november-2025/" target="_blank" rel="noopener noreferrer">Source for Kalapastangan information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 02</p><h3>Pag-Ibig ay Kanibalismo II</h3><p class="track-credit">fitterkarma</p>
-          <p class="availability">Audio unavailable</p>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Pag-Ibig ay Kanibalismo II information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+          <div class="artwork-placeholder"><span class="artwork-artist">fitterkarma</span><span class="artwork-title">Pag-Ibig ay Kanibalismo II</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 02</p><h3>Pag-Ibig ay Kanibalismo II</h3><p class="track-credit">fitterkarma</p>
+          <p class="availability">Local audio not supplied</p>
+          <!-- Regular platform links work without scripts or embedded players. -->
+          <div class="listening-links"><a href="https://open.spotify.com/track/1I44TjvgnOjZTxaGs0E44W" target="_blank" rel="noopener noreferrer" aria-label="Listen to Pag-Ibig ay Kanibalismo II by fitterkarma on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=nw0tZFyExtY" target="_blank" rel="noopener noreferrer" aria-label="Watch Pag-Ibig ay Kanibalismo II by fitterkarma on YouTube — official Mukbang video (opens in a new tab)">Watch on YouTube <span class="link-format">official Mukbang video</span></a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Pag-Ibig ay Kanibalismo II information"><dl class="track-metadata"><div><dt>Performer</dt><dd>fitterkarma</dd></div><div><dt>Release</dt><dd>February 14, 2025</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Writing, production and arrangement (official video credits)</dt><dd>Joao Miguel De Leon; Andreanna Therese Pantig; Calvin Lorenzo Borja; Sanders Philippe Bayas; Sophia Anne Miranda</dd></div></dl><p class="song-description">Pag-Ibig ay Kanibalismo II combines the band’s art rock approach with dark metaphors and unconventional storytelling. Its official Mukbang Video presents the recording through a distinctive visual concept. The song’s later chart success introduced many listeners to fitterkarma’s earlier material.</p><p class="content-reference"><a href="https://billboardphilippines.com/music/features/fitterkarma-on-their-appetite-for-evolution-mythical-storytelling-and-new-creative-pursuits/" target="_blank" rel="noopener noreferrer">Source for Pag-Ibig ay Kanibalismo II information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 03</p><h3>maryclaire</h3><p class="track-credit">fitterkarma</p>
-          <p class="availability">Audio unavailable</p>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="maryclaire information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+          <div class="artwork-placeholder"><span class="artwork-artist">fitterkarma</span><span class="artwork-title">maryclaire</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 03</p><h3>maryclaire</h3><p class="track-credit">fitterkarma</p>
+          <p class="availability">Local audio not supplied</p>
+          <!-- Regular platform links work without scripts or embedded players. -->
+          <div class="listening-links"><a href="https://open.spotify.com/track/148P53WEnNIhdIdL1In2Ls" target="_blank" rel="noopener noreferrer" aria-label="Listen to maryclaire by fitterkarma on Spotify (opens in a new tab)">Listen on Spotify</a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="maryclaire information"><dl class="track-metadata"><div><dt>Performer</dt><dd>fitterkarma</dd></div><div><dt>Release</dt><dd>June 19, 2026</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Songwriter</dt><dd>Joao De Leon</dd></div><div><dt>Mixing</dt><dd>Emil Dela Rosa</dd></div><div><dt>Mastering</dt><dd>Caleb Madison</dd></div></dl><p class="song-description">maryclaire extends fitterkarma’s art rock sound with a live string quartet. Billboard Philippines describes its treatment of devotion and unconditional love through dark, poetic writing. Violin, viola, and cello add another layer to the band’s acoustic and electric arrangement.</p><p class="content-reference"><a href="https://billboardphilippines.com/music/news/fitterkarma-maryclaire-new-single-2026/" target="_blank" rel="noopener noreferrer">Source for maryclaire information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
       </ol>
     </section>

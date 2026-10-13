@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="OPM Afterhours — a cinematic Filipino music discovery project built with HTML and CSS.">
-  <title>Cup of Joe | OPM Afterhours</title>
-  <link rel="icon" href="data:,">
+  <meta name="description" content="Meet Baguio band Cup of Joe and explore Multo, Tingin with Janine Teñoso, and Misteryoso through release notes and official listening links.">
+  <title>Cup of Joe — Songs &amp; Artist Story | OPM Afterhours</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
 </head>
@@ -17,49 +17,56 @@
       <a class="brand" href="../index.html"><span>OPM</span> Afterhours</a>
       <nav aria-label="Main navigation">
         <a href="../index.html">Home</a>
-        <a href="../index.html#artists">Artists</a>
+        <a class="nav-active" href="../index.html#artists">Artists</a>
         <a href="../index.html#genres">Genres</a>
         <a href="../index.html#about">About</a>
       </nav>
     </div>
   </header>
   <main id="main" tabindex="-1" class="page-shell artist-page">
-    <a class="back-link" href="../index.html#artists">← Artist directory</a>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a class="back-link" href="../index.html#artists">← Artist directory</a><span aria-hidden="true">/</span><a class="current-artist" href="cup-of-joe.html" aria-current="page">Cup of Joe</a></nav>
     <!-- Artist identity and static listening-room composition. -->
     <section class="artist-room" aria-labelledby="artist-title">
       <!-- The supplied video is decoration, always muted and independent of audio. -->
       <video class="background-video" autoplay muted loop playsinline aria-hidden="true" tabindex="-1" preload="none">
         <source src="../assets/videos/multo.mp4" type="video/mp4">
       </video>
-      <div class="artist-copy"><p class="source-note">No. 01 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">Cup of Joe</h1><p class="biography">Cup of Joe is a Filipino pop-alternative band based in Baguio.</p>
+      <div class="artist-copy"><p class="source-note">No. 01 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">Cup of Joe</h1><!-- Original biography summary; research references are in docs/content-sources.md. -->
+        <div class="biography"><p>Cup of Joe is a pop-alternative band based in Baguio. Its line-up brings together vocalists Gian Bernardino and Raphaell Ridao, guitarists Gabriel and CJ Fernandez, and keyboardist Xen Gareza. The group’s songs combine melodic band arrangements with emotionally direct Filipino songwriting. Early releases such as Nag-Iisang Muli, Sagada, and Estranghero established a catalog that later grew into the 2023 EP Patutunguhan.</p><p>The collaboration Tingin pairs the band with Janine Teñoso, while Misteryoso highlights its work with producer Shadiel Chan. Multo first appeared as a single in 2024 before joining the 2025 debut album Silakbo, whose sequence explores stages of grief. Together, these releases offer an introduction to a band moving between intimate storytelling and expansive pop arrangements, with two lead voices at the center of its musical identity.</p></div>
         <ul class="genre-labels" aria-label="Artist genres"><li>OPM</li><li>Pop Alternative</li></ul>
-        <div class="artist-portrait">Artist portrait unavailable</div>
+        <div class="artist-portrait portrait-placeholder"><span class="portrait-number" aria-hidden="true">01</span><span>Cup of Joe</span><span class="small-note">Portrait awaiting an authorized image</span></div>
         <p class="small-note">Three featured slots · project selections</p>
       </div>
-      <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><img src="../assets/covers/multo.jpg" alt="Supplied Multo cover artwork"></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
+      <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><img src="../assets/covers/multo.jpg" alt="Supplied cover artwork for Multo by Cup of Joe" width="1200" height="1200"></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
     </section>
     <!-- Every supplied recording uses native audio. Missing media has no player. -->
     <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Playback ends when you navigate to another page.</p></div>
       <ol class="track-grid">
         <li><article class="track-card">
-          <img class="track-artwork" src="../assets/covers/multo.jpg" alt="Supplied Multo cover artwork" width="320" height="320" loading="lazy"><p class="eyebrow">Featured slot 01</p><h3>Multo</h3><p class="track-credit">Cup of Joe</p>
+          <img class="track-artwork" src="../assets/covers/multo.jpg" alt="Supplied cover artwork for Multo by Cup of Joe" width="1200" height="1200" loading="lazy"><p class="eyebrow">Featured slot 01</p><h3>Multo</h3><p class="track-credit">Cup of Joe</p>
           <!-- Native controls handle playback; there is no custom player or autoplay. -->
           <p class="availability">Supplied audio available</p>
           <audio controls preload="metadata" aria-label="Play Multo by Cup of Joe">
             <source src="../assets/audio/multo.mp3" type="audio/mpeg">
             Your browser does not support audio playback. <a href="../assets/audio/multo.mp3">Open the supplied Multo recording</a>.
           </audio>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Multo information"><p>Recorded release year: 2024. Song lyrics unavailable; the original presentation demo text is not the song’s lyrics.</p></div></details>
+          <!-- Regular platform links work without scripts or embedded players. -->
+          <div class="listening-links"><a href="https://open.spotify.com/track/5tlb0AxuzsMWL2GtEppXGX" target="_blank" rel="noopener noreferrer" aria-label="Listen to Multo by Cup of Joe on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=CcS1fsuT10M" target="_blank" rel="noopener noreferrer" aria-label="Watch Multo by Cup of Joe on YouTube — music video (opens in a new tab)">Watch on YouTube <span class="link-format">music video</span></a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Multo information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Cup of Joe</dd></div><div><dt>Release</dt><dd>September 14, 2024</dd></div><div><dt>Release type</dt><dd>Single; later included on Silakbo (2025)</dd></div><div><dt>Songwriters</dt><dd>Raphaell Ridao; Redentor Immanuel Ridao</dd></div><div><dt>Producers</dt><dd>Shadiel Chan; Jovel Rivera</dd></div></dl><p class="song-description">Multo uses a synth-driven arrangement to explore the persistence of memories after loss. In the band’s guide to Silakbo, it belongs to the depression stage of the album’s grief sequence. Its official video stars Miles Ocampo and Elijah Canlas.</p><p class="content-reference"><a href="https://billboardphilippines.com/music/news/cup-of-joe-release-music-video-for-multo-this-march-miles-ocampo-elijah-canlas-silakbo-2025-viva/" target="_blank" rel="noopener noreferrer">Source for Multo information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 02</p><h3>Tingin</h3><p class="track-credit">Cup of Joe feat. Janine Teñoso</p>
-          <p class="availability">Audio unavailable</p>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Tingin information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+          <div class="artwork-placeholder"><span class="artwork-artist">Cup of Joe</span><span class="artwork-title">Tingin</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 02</p><h3>Tingin</h3><p class="track-credit">Cup of Joe feat. Janine Teñoso</p>
+          <p class="availability">Local audio not supplied</p>
+          <!-- Regular platform links work without scripts or embedded players. -->
+          <div class="listening-links"><a href="https://open.spotify.com/track/7b89Ffklm3xh4GI37vlZDZ" target="_blank" rel="noopener noreferrer" aria-label="Listen to Tingin by Cup of Joe on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=6QlSbMKjWSQ" target="_blank" rel="noopener noreferrer" aria-label="Watch Tingin by Cup of Joe on YouTube — music video (opens in a new tab)">Watch on YouTube <span class="link-format">music video</span></a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Tingin information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Cup of Joe feat. Janine Teñoso</dd></div><div><dt>Release</dt><dd>2023</dd></div><div><dt>Release type</dt><dd>Track on Patutunguhan — EP</dd></div><div><dt>Featured artist</dt><dd>Janine Teñoso</dd></div><div><dt>Producer</dt><dd>Shadiel Chan</dd></div><div><dt>Songwriters</dt><dd>Raphaell Ridao; Gian Bernardino; Vixen Gareza; Janine Teñoso; Redentor Ridao</dd></div></dl><p class="song-description">Tingin brings Cup of Joe together with Janine Teñoso on a recording from the Patutunguhan EP. Produced by Shadiel Chan, the song combines the band’s performance with its featured singer. Its official video credits the musicians and collaborators behind the recording.</p><p class="content-reference"><a href="https://www.vivaartistsagency.ph/artists/cup-of-joe" target="_blank" rel="noopener noreferrer">Source for Tingin information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder">Artwork unavailable</div><p class="eyebrow">Featured slot 03</p><h3>Misteryoso</h3><p class="track-credit">Cup of Joe</p>
-          <p class="availability">Audio unavailable</p>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Misteryoso information"><p>Song lyrics unavailable. An authorized recording has not been supplied.</p></div></details>
+          <div class="artwork-placeholder"><span class="artwork-artist">Cup of Joe</span><span class="artwork-title">Misteryoso</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 03</p><h3>Misteryoso</h3><p class="track-credit">Cup of Joe</p>
+          <p class="availability">Local audio not supplied</p>
+          <!-- Regular platform links work without scripts or embedded players. -->
+          <div class="listening-links"><a href="https://open.spotify.com/track/0kE1SmlJNLg14dgdo9kJws" target="_blank" rel="noopener noreferrer" aria-label="Listen to Misteryoso by Cup of Joe on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=GpQ63UI7mQc" target="_blank" rel="noopener noreferrer" aria-label="Watch Misteryoso by Cup of Joe on YouTube — music video (opens in a new tab)">Watch on YouTube <span class="link-format">music video</span></a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Misteryoso information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Cup of Joe</dd></div><div><dt>Release</dt><dd>May 17, 2024</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Songwriter</dt><dd>Gian Bernardino</dd></div><div><dt>Producer</dt><dd>Shadiel Chan</dd></div></dl><p class="song-description">Misteryoso pairs Gian Bernardino’s composition with production by Shadiel Chan and a collaborative arrangement involving the band. The official video was directed by Justin de Dios and features BINI’s Jhoanna Robles, connecting the recording with artists from the wider Filipino pop scene.</p><p class="content-reference"><a href="https://open.spotify.com/album/6BqP9dOpxUGa7gCunYMw9a" target="_blank" rel="noopener noreferrer">Source for Misteryoso information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
       </ol>
     </section>

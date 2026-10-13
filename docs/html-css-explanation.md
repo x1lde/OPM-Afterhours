@@ -70,7 +70,7 @@ The record is static. CSS cannot reliably tell whether a native audio element is
 
 Synchronized lyrics need playback time to select and highlight a line. HTML and CSS cannot read that changing time from native audio. The original Multo demo lines were original presentation text, not Multo's actual lyrics; they are omitted here.
 
-Every track instead has a native `details` song-information panel. `summary` opens and closes it with mouse or keyboard. Its focusable content region can scroll vertically if longer authorized information is added. No highlighted line pretends to follow the recording. No song lyrics have been supplied for this edition.
+Every track instead has a native `details` song-information panel. `summary` opens and closes it with mouse or keyboard. Its focusable content region contains verified metadata, an original description, and a source link. Milestone 11 lets expanded panels grow naturally without a small nested scrolling area. No highlighted line pretends to follow the recording. No song lyrics have been supplied for this edition.
 
 ## 10. Why other features were removed
 
@@ -85,12 +85,16 @@ Live search, dynamic genre filtering, persistent favorites, track switching, cus
 5. Place authorized lyrics in that track's information panel only, with an accurate label. Do not insert another song's words.
 6. Test the page with JavaScript disabled and at phone width. Do not change the pending Skusta Clee title until it has been approved and verified.
 
-These are future editing instructions. This migration includes only the three already supplied Multo media files.
+Milestone 11 retains the three supplied Multo media files. All other recordings, covers, and portraits remain unavailable. Each of the 29 selected songs now has a verified direct Spotify link; 26 also have verified YouTube links. See README.md for the editing examples and docs/client-asset-checklist.md for missing files.
 
 ## 12. A presentation students can demonstrate
 
-Start at the landing page and explain the semantic HTML sections. Open one artist card and show its relative link. Point to the unchanged biography, genre tags, and three track slots. Demonstrate Multo with the browser's audio controls, then open a song-information panel with the keyboard. Navigate from Cup of Joe to the previous artist to demonstrate wrapping.
+Start at the landing page and explain the semantic HTML sections. Open one artist card and show its relative link. Point to the expanded biography, preserved genre tags, and three track slots. Open a song panel to explain its release and credits. Follow an official listening link and explain that an ordinary anchor opens a new tab. Demonstrate Multo with the browser's audio controls, then open a song-information panel with the keyboard. Navigate from Cup of Joe to the previous artist to demonstrate wrapping.
 
 Resize the browser and show the Grid columns stacking, plus the visible mobile navigation. Explain the variables in `style.css`, the two breakpoints in `responsive.css`, and the circular vinyl styling. Disable JavaScript and repeat the navigation/audio demonstration. Finish by explaining why unavailable tracks have no player and why synchronized lyrics and favorites were removed.
 
-The ranking belongs to Billboard Philippines' first-half 2026 list. Featured songs are project selections, not chart-ranked top-three tracks. Read `verification.md` to distinguish automated browser checks from checks still requiring a human.
+The ranking belongs to Billboard Philippines' first-half 2026 list. Featured songs are project selections, not chart-ranked top-three tracks. Read `milestone-11-verification.md` for current checks and their limits. The older `verification.md` records the original migration.
+
+## 13. Milestone 11 metadata and current-page indicators
+
+The favicon is an original SVG made from static shapes, with no executable content. Every page has its own title and meta description. Home uses aria-current="page" on Home; an artist page highlights the parent Artists section and marks its own artist breadcrumb as the current page. No script reads the URL. Research evidence lives in content-sources.md; the content audit records completed counts and missing media.

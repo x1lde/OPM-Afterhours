@@ -1,5 +1,7 @@
 # Migration verification — October 13, 2026
 
+Historical report for the original migration. Milestone 11 subsequently adds researched content, external listening anchors, and one original static SVG favicon (explicitly permitted for this milestone). See [current verification](milestone-11-verification.md) for current counts and checks.
+
 ## Environment and method
 
 The installed VS Code Live Server 5.7.10 engine served the separate folder on localhost port 5501. Its `useBrowserExtension` option was enabled, without a browser extension, to prevent development reload-script injection. Playwright controlled an actual Chromium browser using contexts with `javaScriptEnabled: false`. Testing code and screenshots were kept outside the submission. Browser evaluation was used only to inspect layout and media state; no script was added to the website and no playback was initiated through scripting.

@@ -1,92 +1,130 @@
-# OPM Afterhours — HTML/CSS edition
+﻿# OPM Afterhours — HTML/CSS edition
 
-A cinematic Filipino music discovery school project. This separate edition uses only HTML5 and CSS3. Open it directly or serve it through VS Code Live Server; no build step is required.
+A school music discovery website featuring ten Filipino artists: read artist stories, open featured-song information, follow official listening links, and play the supplied Multo recording.
 
-## Technology restrictions
+## Technology rule
 
-The submitted website contains no JavaScript, inline event handlers, frameworks, package manifests, build tools, backend, or API integrations. Native HTML links, audio, video, and details panels provide the interactions. The original implementation remains separate.
+The submitted site uses **HTML5 and CSS3 only**. No JavaScript, event handlers, frameworks, packages, build tools, backend services, or platform embeds are included. Content is written directly in HTML and works with JavaScript disabled. The original JavaScript project remains separate. No Git commits were made for Milestone 11.
 
-## File structure
+## Project structure
 
 ```text
-index.html
-artists/
-  cup-of-joe.html
-  arthur-nery.html
-  fitterkarma.html
-  ben-and-ben.html
-  skusta-clee.html
-  sb19.html
-  iv-of-spades.html
-  december-avenue.html
-  bini.html
-  rob-deniel.html
-css/
-  style.css
-  responsive.css
-assets/
-  audio/multo.mp3
-  videos/multo.mp4
-  covers/multo.jpg
-  artists/                 (empty; portraits not supplied)
-docs/
-  html-css-explanation.md
-  verification.md
-README.md
+index.html                  Homepage, artists, genres, and About
+artists/                    Ten artist pages
+css/style.css               Shared design and content styles
+css/responsive.css          Tablet, phone, and reduced-motion rules
+assets/favicon.svg          Original static vinyl favicon
+assets/artists/             Empty: portraits need authorization
+assets/covers/multo.jpg      Existing supplied artwork
+assets/audio/multo.mp3       Existing supplied recording
+assets/videos/multo.mp4      Existing supplied decorative video
+docs/content-sources.md     Research evidence and unresolved details
+docs/content-audit.md       Actual completion counts
+docs/client-asset-checklist.md  Per-artist asset checklist
+docs/milestone-11-verification.md  Current QA results and limits
+docs/verification.md         Historical migration checks
+docs/html-css-explanation.md Presentation guide
 ```
 
-## Run the website
+## Open in VS Code
 
 1. Open this folder in VS Code.
-2. With the Live Server extension installed, right-click `index.html` and choose **Open with Live Server**.
-3. Follow the artist links and use the browser's audio controls on Cup of Joe's page.
-4. Disable JavaScript in your browser and reload to demonstrate that the pages and controls still work.
+2. Install the Live Server editor extension if needed.
+3. Right-click `index.html` and choose **Open with Live Server**.
+4. Open an artist page and expand a song-information panel.
+5. Play Multo with the browser's own audio controls.
+6. Disable JavaScript in the browser and repeat these steps.
 
-Live Server is an editor development tool, not a website dependency. Its default live-reload mode can inject a development script into served responses. The files on disk contain no such script. For a strictly script-free preview, enable Live Server's **Use Browser Extension** setting without installing the browser extension; it serves the pages without injected reload code. Refresh manually after edits. Testing used this setting with the installed Live Server engine.
+You can also open `index.html` directly. No installation or build step is needed for the website.
 
-## Implemented features
+Live Server is an editor tool. Its normal live-reload mode can inject a development script into responses even though the submitted files contain no scripts. For a strictly script-free preview, enable **Use Browser Extension** without installing the browser extension, and refresh manually. Milestone 11 checks used Python's static HTTP server, which injects no reload code.
 
-- Cinematic near-black/charcoal design, dusty-rose accents, Palatino-style headings and system body text.
-- Landing page with hero, ranked artist directory, static genre groups, and About section.
-- Ten dedicated artist pages with unchanged catalog biographies and genre metadata.
-- Three featured slots per artist: 29 verified titles and one pending selection.
-- Circular desktop/tablet navigation arrows and visible mobile previous/next links, wrapping at either end.
-- One native audio player for the supplied Multo MP3, without audio autoplay.
-- Muted decorative Multo video and cover artwork on Cup of Joe's page.
-- Static CSS vinyl and native expandable song-information panels.
-- Responsive Grid/Flexbox layouts, skip links, visible focus, and reduced-motion styling.
+## Milestone 11 content
 
-## Known limitations and removed features
+- Ten original biographies of 100–160 words, in two paragraphs.
+- Expanded metadata and original 30–60-word descriptions for 29 selected songs.
+- 29 direct Spotify links and 26 verified YouTube links.
+- Artist-specific portrait placeholders and song-specific cover placeholders.
+- Original static SVG favicon, unique page metadata, and current-page indicators.
 
-Page navigation reloads the document and ends playback. Multiple future native players could play simultaneously; HTML/CSS cannot coordinate them. No search, dynamic filtering, favorites, custom playback controls, synchronized lyrics, dynamic progress display, track switching, swipe gestures, or cross-tab synchronization is included. Genre links navigate directly to artist pages.
+Artist order follows [Billboard Philippines' first-half 2026 list](https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/), not a final full-year ranking. The original catalog records Ralph Regis as author and July 24, 2026 as publication date. Featured songs are project selections, not chart-ranked top-three songs. Existing titles, collaborators, and genre tags were retained.
 
-The vinyl is static and does not represent playback state. Song-information panels replace synchronized lyrics. The original Multo demonstration text was not the song's lyrics and is omitted to avoid confusion. No song lyrics are currently presented.
+## Edit biographies and song information
 
-Decorative video is always muted. Browser autoplay policy may prevent it from playing; the charcoal composition remains complete. Reduced-motion CSS hides the video; CSS cannot guarantee that a hidden video stops decoding or downloading.
+Open the matching file in `artists/`. Find `<div class="biography">` and edit its two `<p>` paragraphs. Write original summaries supported by reputable sources; record source titles, URLs, access dates, and unresolved facts in `docs/content-sources.md`. Keep approved artist and track selections. Save as UTF-8. Write `&amp;` for an ampersand, as in `Ben&amp;Ben`.
 
-## Media requirements and inventory
+Each `<article class="track-card">` contains a native `<details>` panel. Its `<summary>` opens with a click or Enter/Space. Inside `<dl class="track-metadata">`, add verified information using:
 
-Only the supplied `multo.mp3`, `multo.mp4`, and `multo.jpg` were copied. No media was downloaded. Supplied assets are reused under the project owner's existing authorization; this migration does not independently establish licensing. Metadata sources establish titles and artist information, not media permission.
+```html
+<div><dt>Release</dt><dd>2024</dd></div>
+```
 
-Missing media:
+Edit the paragraph with class `song-description` and its research link. Use a verified year when the exact date is uncertain. Omit unverified credits and do not copy lyrics. Expanded panels grow naturally; they need no scripted accordion.
 
-- 28 selected recordings have no supplied audio, cover artwork, decorative video, or authorized song lyrics.
-- Skusta Clee's third slot awaits an approved and verified title, then authorized media.
-- All 10 artist portraits are unavailable.
-- Multo has no supplied authorized song lyrics; its original demo prose is not song lyrics.
+## Replace a portrait placeholder
 
-The artist pages individually identify the unavailable tracks. No broken player or missing-file image request is rendered. Optional video and artwork need not be supplied for the site to work. An unrelated PDF in the original cover folder was not copied.
+First establish the image's identity and reproduction permission. Put the authorized file in `assets/artists/`. Replace the matching placeholder on both the homepage and artist page:
 
-To add media later, first obtain permission, place the real file in the appropriate asset folder, and edit the relevant HTML. Use `../assets/...` from artist pages and `assets/...` from the landing page. Add audio controls only after the recording exists. Do not use Multo's files for other songs. See the student explanation for examples.
+```html
+<img class="artist-image" src="../assets/artists/cup-of-joe.jpg"
+     alt="Cup of Joe band members in an authorized group portrait"
+     width="800" height="600" loading="lazy">
+```
 
-## Ranking and content attribution
+This is an editing example; that file is **not supplied**. Use `assets/artists/...` on the homepage and `../assets/artists/...` inside artist pages. Use real dimensions and accurate alt text. CSS reserves a 4:3 area and crops consistently; check that faces remain visible. Update the media inventory and required attribution.
 
-Artist order is preserved from the original project's verified catalog: Cup of Joe, Arthur Nery, fitterkarma, Ben&Ben, Skusta Clee, SB19, IV OF SPADES, December Avenue, BINI, Rob Deniel.
+## Add authorized cover artwork
 
-Source: [Billboard Philippines — Top 10 Artists of 2026 (So Far)](https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/). The original project records Ralph Regis as author, July 24, 2026 as publication date, and October 13, 2026 as its verification date. This is the **first-half / mid-year 2026 list**, not a final full-year ranking. These details are inherited from the inspected catalog; no new chart calculation was performed. Featured songs are project selections and are not chart-ranked top-three songs.
+Put the exact song/release image in `assets/covers/`, then replace only its matching placeholder:
 
-Biographies, spellings, featured credits, and genre tags are retained from the existing catalog. OPM describes Filipino music broadly. See `docs/verification.md` for performed checks and `docs/html-css-explanation.md` for the presentation guide.
+```html
+<img class="track-artwork" src="../assets/covers/approved-song.jpg"
+     alt="Cover artwork for the approved song by its performing artist"
+     width="600" height="600" loading="lazy">
+```
 
-## Remaining owner decisions
+Replace the example path, dimensions, and text with real details. Track artwork uses a consistent square area. Never reuse Multo's cover for another song. Retain existing authorized media unless a separate replacement is approved.
 
-Choose and verify Skusta Clee's third track. Supply authorized recordings, portraits, covers, optional videos, and lyrics if desired. No further media integration is included in this migration.
+## Add an authorized MP3
+
+Put the real recording in `assets/audio/`. Add a player only to its matching track card:
+
+```html
+<audio controls preload="metadata" aria-label="Play the approved song by its artist">
+  <source src="../assets/audio/approved-song.mp3" type="audio/mpeg">
+  Your browser does not support audio playback.
+  <a href="../assets/audio/approved-song.mp3">Open the authorized recording</a>.
+</audio>
+```
+
+Update the availability label after the file exists. The browser supplies play/pause, seeking, and available volume controls. Audio does not autoplay. Leaving the page ends playback. With multiple players, listeners must pause one before starting another; HTML/CSS cannot coordinate playback.
+
+Only Multo has a supplied MP3, JPEG, and muted decorative MP4. These were retained byte-for-byte under the owner's inherited authorization; this milestone does not independently establish a license. No commercial recordings or publicity images were downloaded.
+
+## Add official listening links
+
+Verify the artist, title, and exact version using an official artist/label upload or licensed platform listing. Add a regular anchor inside the matching card's `listening-links` div:
+
+```html
+<a href="https://open.spotify.com/track/5tlb0AxuzsMWL2GtEppXGX"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Listen to Multo by Cup of Joe on Spotify (opens in a new tab)">
+  Listen on Spotify
+</a>
+```
+
+This is Multo's verified destination; use the correct verified URL for any other song. Label formats such as official audio, music video, or performance visualizer. Avoid generic search pages, fan reuploads, and unlabeled alternate versions. Record evidence and update audit counts.
+
+Platform links open another tab. The platform's own website may require JavaScript, an account, or a subscription; OPM Afterhours remains script-free. A listening link does not grant permission to host audio or artwork locally.
+
+## Metadata and navigation
+
+Each page has a unique title and description, UTF-8 encoding, English language metadata, viewport settings, and a favicon. Home marks its Home link with `aria-current="page"`. Artist pages highlight the Artists parent section using `nav-active` and mark their current artist breadcrumb with `aria-current="page"`. These indicators are written statically in HTML.
+
+## Remaining work
+
+All ten portraits and 28 selected tracks' recordings/covers still need authorized files if local hosting is desired. Skusta Clee's confirmed songs are Since Day One (feat. Flow G) and Kalimutan Ka; slot three remains pending approval. Bebe is a documented recommendation only. Official YouTube uploads for maryclaire, Kalimutan Ka, and Ulap remain unresolved; verified Spotify links provide alternatives.
+
+Live search, dynamic filtering, persistent favorites, uninterrupted cross-page playback, synchronized players, and synchronized lyrics require scripting and are excluded by the professor's rule. The vinyl is static. Reduced-motion CSS hides decorative video but cannot guarantee that it stops decoding or downloading.
+
+Read the content audit, asset checklist, and current verification report to distinguish completed work from missing media and outstanding browser, screen-reader, and physical-device checks.
