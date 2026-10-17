@@ -8,8 +8,10 @@
   --muted: #bcb4b9;
   --accent: #cc98a7;
   --border: #383036;
-  --serif: "Palatino Linotype", Palatino, Georgia, serif;
-  --sans: "Segoe UI", system-ui, sans-serif;
+  --serif: "Cormorant Garamond", "Palatino Linotype", Georgia, serif;
+  --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --label-font: "Space Grotesk", "Segoe UI", sans-serif;
+  --signature-font: "Allura", "Brush Script MT", cursive;
   --gutter: clamp(1.25rem, 5vw, 5rem);
 }
 /* Match the page scrollbar to the artist biography controls. */
@@ -25,7 +27,7 @@ html::-webkit-scrollbar-thumb {
   border-radius: 999px;
 }
 html::-webkit-scrollbar-thumb:hover { background: var(--text); }
-/* Basic sizing and readable typography. No external fonts are needed. */
+/* Shared typography with system fallbacks while Google Fonts load. */
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; background: var(--background); color: var(--text); font-family: var(--sans); line-height: 1.65; }
 h1, h2, h3, p { margin: 0; }
@@ -40,7 +42,7 @@ a, summary { -webkit-tap-highlight-color: transparent; }
 img { display: block; max-width: 100%; object-fit: cover; }
 section[id] { scroll-margin-top: 1rem; }
 .page-shell { width: min(100%, 1600px); margin: auto; padding: 0 var(--gutter); }
-.eyebrow { font-family: var(--sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); }
+.eyebrow { font-family: var(--label-font); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); }
 .small-note, .source-note { color: var(--muted); font-size: 0.875rem; }
 .source-note a { color: var(--accent); }
 .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 10; padding: 0.75rem; background: var(--accent); color: var(--background); transform: translateY(-200%); }
@@ -48,12 +50,12 @@ section[id] { scroll-margin-top: 1rem; }
 /* Flexbox allows the wordmark and ordinary navigation links to share a row. */
 /* A persistent tab reveals navigation with hover, keyboard focus or a tap. */
 body { padding-top: 3.5rem; }
-.site-header { position: fixed; inset: 0 0 auto; z-index: 8; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
-.header-panel { width: 100%; display: grid; grid-template-rows: 0fr; visibility: hidden; background: var(--background); transition: grid-template-rows .25s ease, visibility .25s; }
-.header-panel > .header-inner { overflow: hidden; min-height: 0; padding-block: 0; transition: padding .25s ease; }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 8; display: flex; flex-direction: column; align-items: center; pointer-events: none; transform: translateY(calc(-100% + 44px)); transition: transform .25s ease; }
+.header-panel { width: 100%; visibility: hidden; background: var(--background); border-bottom: 1px solid var(--border); transition: visibility .25s; }
+.header-panel > .header-inner { padding-block: 1.25rem; }
 .header-tab { pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: .65rem; min-width: 104px; min-height: 44px; padding: .4rem 1rem; border: 1px solid var(--border); border-top: 0; border-radius: 0 0 14px 14px; background: var(--surface); color: var(--accent); cursor: pointer; font-size: .8rem; }
-.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-panel { grid-template-rows: 1fr; visibility: visible; pointer-events: auto; border-bottom: 1px solid var(--border); }
-.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-inner { padding-block: 1.25rem; }
+.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) { transform: translateY(0); }
+.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-panel { visibility: visible; pointer-events: auto; }
 .header-toggle:focus-visible ~ .header-tab { outline: 3px solid var(--accent); outline-offset: 3px; }
 .site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-tab .bi { transform: rotate(180deg); }
 .header-inner { width: min(100%, 1600px); padding: 1.25rem var(--gutter); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
@@ -115,7 +117,24 @@ body { padding-top: 3.5rem; }
 audio { width: 100%; max-width: 100%; min-width: 0; display: block; }
 .song-information { border-top: 1px solid var(--border); margin-top: 1.5rem; }
 summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--muted); }
-.information-scroll { max-height: 14rem; overflow-y: auto; padding: 0.75rem 0.5rem; color: var(--muted); }
+.information-scroll {
+  height: 14rem;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--raised);
+  padding: 0.75rem 0.5rem;
+  color: var(--muted);
+}
+.information-scroll::-webkit-scrollbar { width: 8px; }
+.information-scroll::-webkit-scrollbar-track { background: var(--raised); border-radius: 999px; }
+.information-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--raised);
+  border-radius: 999px;
+}
+.information-scroll::-webkit-scrollbar-thumb:hover { background: var(--text); }
 /* Actual links replace gallery buttons and swipe handling. */
 .adjacent-navigation { display: flex; justify-content: space-between; gap: 2rem; padding: 2rem 0 3rem; border-top: 1px solid var(--border); }
 .adjacent-link { display: flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 0.75rem 0; text-decoration: none; }
@@ -177,7 +196,6 @@ summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--mut
 .song-description { line-height: 1.65; }
 .content-reference { margin-top: 1rem; font-size: 0.8rem; }
 .content-reference a { display: inline-flex; align-items: center; min-height: 44px; }
-.information-scroll { max-height: none; overflow: visible; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 /* HTML/CSS artist gallery: radio controls select the featured portrait. */
@@ -189,79 +207,81 @@ summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--mut
 .gallery-slide .card-heading { justify-content: center; }
 .gallery-slide h3 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
 .gallery-slide .card-heading, .gallery-slide .artist-card p, .gallery-slide .card-link { opacity: 0; }
-.gallery-arrows { display: none; justify-content: space-between; position: absolute; top: calc(var(--portrait-size) / 2 - 24px); left: -24px; right: -24px; pointer-events: none; }
-.gallery-arrows label { display: grid; place-items: center; width: 48px; height: 48px; background: var(--background); border: 1px solid var(--accent); border-radius: 50%; color: var(--text); cursor: pointer; pointer-events: auto; font-size: 1.5rem; }
+.gallery-controls { position: absolute; top: calc(1rem + var(--portrait-size) / 2 - 24px); left: 50%; width: calc(var(--portrait-size) + 48px); transform: translateX(-50%); z-index: 4; pointer-events: none; }
+.gallery-arrows { display: none; justify-content: space-between; pointer-events: none; }
+.gallery-arrows label { display: grid; place-items: center; width: 48px; height: 48px; background: var(--background); border: 1px solid var(--accent); border-radius: 50%; color: var(--text); cursor: pointer; pointer-events: auto; }
 .gallery-arrows label:hover { background: var(--accent); color: var(--background); }
+.gallery-arrows .bi { font-size: 1rem; line-height: 1; }
 .gallery-picker { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; }
 .gallery-picker label { display: grid; place-items: center; width: 44px; height: 44px; color: var(--muted); border-bottom: 2px solid transparent; cursor: pointer; font-size: .8rem; letter-spacing: .08em; }
 .gallery-picker label:hover { color: var(--accent); }
 .gallery-hint { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 1rem; }
 #artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(1) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(1) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(1) .gallery-arrows { display: flex; }
+#artist-choice-1:checked ~ .gallery-controls > .gallery-arrows:nth-child(1) { display: flex; }
 #artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(10) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(2) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-1:checked ~ .gallery-picker label[for="artist-choice-1"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-1:focus-visible ~ .gallery-picker label[for="artist-choice-1"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(2) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(2) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(2) .gallery-arrows { display: flex; }
+#artist-choice-2:checked ~ .gallery-controls > .gallery-arrows:nth-child(2) { display: flex; }
 #artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(1) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(3) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-2:checked ~ .gallery-picker label[for="artist-choice-2"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-2:focus-visible ~ .gallery-picker label[for="artist-choice-2"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(3) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(3) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(3) .gallery-arrows { display: flex; }
+#artist-choice-3:checked ~ .gallery-controls > .gallery-arrows:nth-child(3) { display: flex; }
 #artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(2) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(4) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-3:checked ~ .gallery-picker label[for="artist-choice-3"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-3:focus-visible ~ .gallery-picker label[for="artist-choice-3"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(4) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(4) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(4) .gallery-arrows { display: flex; }
+#artist-choice-4:checked ~ .gallery-controls > .gallery-arrows:nth-child(4) { display: flex; }
 #artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(3) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(5) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-4:checked ~ .gallery-picker label[for="artist-choice-4"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-4:focus-visible ~ .gallery-picker label[for="artist-choice-4"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(5) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(5) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(5) .gallery-arrows { display: flex; }
+#artist-choice-5:checked ~ .gallery-controls > .gallery-arrows:nth-child(5) { display: flex; }
 #artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(4) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(6) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-5:checked ~ .gallery-picker label[for="artist-choice-5"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-5:focus-visible ~ .gallery-picker label[for="artist-choice-5"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(6) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(6) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(6) .gallery-arrows { display: flex; }
+#artist-choice-6:checked ~ .gallery-controls > .gallery-arrows:nth-child(6) { display: flex; }
 #artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(5) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(7) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-6:checked ~ .gallery-picker label[for="artist-choice-6"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-6:focus-visible ~ .gallery-picker label[for="artist-choice-6"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(7) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(7) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(7) .gallery-arrows { display: flex; }
+#artist-choice-7:checked ~ .gallery-controls > .gallery-arrows:nth-child(7) { display: flex; }
 #artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(6) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(8) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-7:checked ~ .gallery-picker label[for="artist-choice-7"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-7:focus-visible ~ .gallery-picker label[for="artist-choice-7"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(8) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(8) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(8) .gallery-arrows { display: flex; }
+#artist-choice-8:checked ~ .gallery-controls > .gallery-arrows:nth-child(8) { display: flex; }
 #artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(7) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(9) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-8:checked ~ .gallery-picker label[for="artist-choice-8"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-8:focus-visible ~ .gallery-picker label[for="artist-choice-8"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(9) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(9) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(9) .gallery-arrows { display: flex; }
+#artist-choice-9:checked ~ .gallery-controls > .gallery-arrows:nth-child(9) { display: flex; }
 #artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(8) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(10) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-9:checked ~ .gallery-picker label[for="artist-choice-9"] { color: var(--accent); border-color: var(--accent); }
 #artist-choice-9:focus-visible ~ .gallery-picker label[for="artist-choice-9"] { outline: 2px solid var(--accent); outline-offset: 2px; }
 #artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(10) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
 #artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(10) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
-#artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(10) .gallery-arrows { display: flex; }
+#artist-choice-10:checked ~ .gallery-controls > .gallery-arrows:nth-child(10) { display: flex; }
 #artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(9) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
 #artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(1) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
 #artist-choice-10:checked ~ .gallery-picker label[for="artist-choice-10"] { color: var(--accent); border-color: var(--accent); }
@@ -272,7 +292,6 @@ summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--mut
 .back-link { gap: .5rem; }
 .text-link .bi, .card-link .bi { margin-left: .35rem; }
 .listening-links .bi { font-size: 1.1rem; }
-.gallery-arrows .bi { font-size: 1.25rem; }
 
 /* Native radio choices switch records without scripts. */
 .song-picker { border: 0; padding: 0; margin: 1rem 0; min-width: 0; }

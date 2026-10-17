@@ -1,0 +1,82 @@
+[
+  {
+    "artist": "Cup of Joe",
+    "source": "https://www.deezer.com/artist/60687062",
+    "api": "https://api.deezer.com/search/artist?q=Cup+of+Joe&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/72899d9b602142ed374df10a44e446c9/1000x1000-000000-80-0-0.jpg",
+    "file": "cup-of-joe-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:26.786784+00:00"
+  },
+  {
+    "artist": "Arthur Nery",
+    "source": "https://www.deezer.com/artist/55640202",
+    "api": "https://api.deezer.com/search/artist?q=Arthur+Nery&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/516f55a94d77195f3d682afd954354b0/1000x1000-000000-80-0-0.jpg",
+    "file": "arthur-nery-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:26.786105+00:00"
+  },
+  {
+    "artist": "fitterkarma",
+    "source": "https://www.deezer.com/artist/227002145",
+    "api": "https://api.deezer.com/search/artist?q=fitterkarma&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/af43472cf5debacba8796666c6dfd647/1000x1000-000000-80-0-0.jpg",
+    "file": "fitterkarma-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:26.772888+00:00"
+  },
+  {
+    "artist": "Ben&Ben",
+    "source": "https://www.deezer.com/artist/11819305",
+    "api": "https://api.deezer.com/search/artist?q=Ben%26Ben&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/ed13e17bb0f432cf5c1d233f6ccb1801/1000x1000-000000-80-0-0.jpg",
+    "file": "ben-and-ben-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:27.144236+00:00"
+  },
+  {
+    "artist": "Skusta Clee",
+    "source": "https://www.deezer.com/artist/11321714",
+    "api": "https://api.deezer.com/search/artist?q=Skusta+Clee&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/133fcacfdfa752c1be0b00a5e10864db/1000x1000-000000-80-0-0.jpg",
+    "file": "skusta-clee-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:27.559588+00:00"
+  },
+  {
+    "artist": "SB19",
+    "source": "https://www.deezer.com/artist/52961842",
+    "api": "https://api.deezer.com/search/artist?q=SB19&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/270ce2686651cf5ea786d9407c200658/1000x1000-000000-80-0-0.jpg",
+    "file": "sb19-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:27.592387+00:00"
+  },
+  {
+    "artist": "IV OF SPADES",
+    "source": "https://www.deezer.com/artist/11152604",
+    "api": "https://api.deezer.com/search/artist?q=IV+OF+SPADES&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/2add086f7c58984e3630eb70f84b145d/1000x1000-000000-80-0-0.jpg",
+    "file": "iv-of-spades-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:27.571737+00:00"
+  },
+  {
+    "artist": "December Avenue",
+    "source": "https://www.deezer.com/artist/2007671",
+    "api": "https://api.deezer.com/search/artist?q=December+Avenue&limit=25",
+    "image_url": "https://cdn-images.dzcdn.net/images/artist/4d1c7f30c5cdaa79366e91deb7932363/1000x1000-000000-80-0-0.jpg",
+    "file": "december-avenue-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:27.969274+00:00"
+  },
+  {
+    "artist": "BINI",
+    "source": "https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga",
+    "api": "https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F7tNO3vJC9zlHy2IJOx34ga",
+    "image_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174ce669d4e7ce4d47080c7e22a",
+    "file": "bini-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:28.381453+00:00"
+  },
+  {
+    "artist": "Rob Deniel",
+    "source": "https://open.spotify.com/artist/7dFzqx2qyelGPiBKmdSEOT",
+    "api": "https://open.spotify.com/oembed?url=https%3A%2F%2Fopen.spotify.com%2Fartist%2F7dFzqx2qyelGPiBKmdSEOT",
+    "image_url": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174db7d933dfe31b43cbffbb13f",
+    "file": "rob-deniel-profile.jpg",
+    "retrieved_at": "2026-10-17T17:43:28.390209+00:00"
+  }
+]

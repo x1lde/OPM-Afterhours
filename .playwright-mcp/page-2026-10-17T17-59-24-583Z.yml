@@ -1,0 +1,218 @@
+- generic [active] [ref=f27e1]:
+  - link "Skip to content" [ref=f27e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - checkbox "Keep navigation open"
+    - generic [ref=f27e3] [cursor=pointer]:
+      - generic [ref=f27e4]: Menu
+      - generic [aria-hidden] [ref=f27e5]: 
+  - main [ref=f27e6]:
+    - region [ref=f27e7]:
+      - generic [ref=f27e8]:
+        - paragraph [ref=f27e9]: A Filipino listening room
+        - heading "For the nights that need a song." [level=1] [ref=f27e11]: For the nightsthat need a song.
+        - paragraph [ref=f27e12]: Discover the voices of OPM. Ten Filipino artists, stories behind the sound, and official links to the songs that stay with you.
+        - link "Discover the artists" [ref=f27e13] [cursor=pointer]:
+          - /url: "#artists"
+          - text: Discover the artists
+          - generic [aria-hidden] [ref=f27e14]: 
+        - generic [ref=f27e15]:
+          - generic [ref=f27e16]:
+            - strong [ref=f27e17]: "10"
+            - text: artists
+          - generic [ref=f27e18]:
+            - strong [ref=f27e19]: "30"
+            - text: featured tracks
+          - generic [ref=f27e20]: One late-night soundtrack
+      - generic [ref=f27e21]:
+        - img "Decorative vinyl record" [ref=f27e22]:
+          - generic [ref=f27e24]:
+            - generic [ref=f27e25]: OPM
+            - strong [ref=f27e26]: Afterhours
+        - paragraph [ref=f27e27]: Made for the hours that feel like yours.
+    - region [ref=f27e28]:
+      - generic [ref=f27e29]:
+        - generic [ref=f27e30]:
+          - paragraph [ref=f27e31]: The artist directory
+          - heading "Ten voices. Many stories." [level=2] [ref=f27e32]
+        - paragraph [ref=f27e33]:
+          - link "Billboard Philippines · first half of 2026" [ref=f27e34] [cursor=pointer]:
+            - /url: https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/
+      - paragraph [ref=f27e35]: Find a familiar favorite. Stay for someone new.
+      - group "Featured artists" [ref=f27e36]:
+        - radio "Feature Cup of Joe" [checked] [ref=f27e37]
+        - radio "Feature Arthur Nery" [ref=f27e38]
+        - radio "Feature fitterkarma" [ref=f27e39]
+        - radio "Feature Ben&Ben" [ref=f27e40]
+        - radio "Feature Skusta Clee" [ref=f27e41]
+        - radio "Feature SB19" [ref=f27e42]
+        - radio "Feature IV OF SPADES" [ref=f27e43]
+        - radio "Feature December Avenue" [ref=f27e44]
+        - radio "Feature BINI" [ref=f27e45]
+        - radio "Feature Rob Deniel" [ref=f27e46]
+        - list [ref=f27e47]:
+          - listitem [ref=f27e48]:
+            - link "Cup of Joe No. 01 Cup of Joe OPM · Pop Alternative Explore artist" [ref=f27e49] [cursor=pointer]:
+              - /url: artists/cup-of-joe.html
+              - img "Cup of Joe" [ref=f27e50]
+              - generic [ref=f27e51]:
+                - generic [ref=f27e52]: No. 01
+                - heading "Cup of Joe" [level=3] [ref=f27e53]
+              - paragraph [ref=f27e54]: OPM · Pop Alternative
+              - generic [ref=f27e55]:
+                - text: Explore artist
+                - generic [aria-hidden] [ref=f27e56]: 
+          - listitem [ref=f27e57]:
+            - link "Arthur Nery No. 02 Arthur Nery OPM Explore artist" [ref=f27e58] [cursor=pointer]:
+              - /url: artists/arthur-nery.html
+              - img "Arthur Nery" [ref=f27e59]
+              - generic [ref=f27e60]:
+                - generic [ref=f27e61]: No. 02
+                - heading "Arthur Nery" [level=3] [ref=f27e62]
+              - paragraph [ref=f27e63]: OPM
+              - generic [ref=f27e64]:
+                - text: Explore artist
+                - generic [aria-hidden] [ref=f27e65]: 
+          - listitem [ref=f27e66]:
+            - link "Rob Deniel No. 10 Rob Deniel OPM · Pop Explore artist" [ref=f27e67] [cursor=pointer]:
+              - /url: artists/rob-deniel.html
+              - img "Rob Deniel" [ref=f27e68]
+              - generic [ref=f27e69]:
+                - generic [ref=f27e70]: No. 10
+                - heading "Rob Deniel" [level=3] [ref=f27e71]
+              - paragraph [ref=f27e72]: OPM · Pop
+              - generic [ref=f27e73]:
+                - text: Explore artist
+                - generic [aria-hidden] [ref=f27e74]: 
+        - generic:
+          - generic:
+            - generic "Previous artist" [ref=f27e75] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f27e76]: 
+            - generic "Next artist" [ref=f27e78] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f27e79]: 
+          - text:                  
+        - generic "Choose an artist" [ref=f27e81]:
+          - generic "Cup of Joe" [ref=f27e82] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e84]: "01"
+          - generic "Arthur Nery" [ref=f27e85] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e87]: "02"
+          - generic "fitterkarma" [ref=f27e88] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e90]: "03"
+          - generic "Ben&Ben" [ref=f27e91] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e93]: "04"
+          - generic "Skusta Clee" [ref=f27e94] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e96]: "05"
+          - generic "SB19" [ref=f27e97] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e99]: "06"
+          - generic "IV OF SPADES" [ref=f27e100] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e102]: "07"
+          - generic "December Avenue" [ref=f27e103] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e105]: "08"
+          - generic "BINI" [ref=f27e106] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e108]: "09"
+          - generic "Rob Deniel" [ref=f27e109] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f27e111]: "10"
+        - paragraph [ref=f27e112]: Choose an artist, then explore their story.
+    - region [ref=f27e113]:
+      - paragraph [ref=f27e114]: Find your sound
+      - heading "Explore by genre." [level=2] [ref=f27e115]
+      - paragraph [ref=f27e116]: These broad descriptions follow the original catalog. OPM refers to Filipino music, encompassing many styles.
+      - generic [ref=f27e117]:
+        - generic [ref=f27e118]:
+          - heading "OPM" [level=3] [ref=f27e119]
+          - list [ref=f27e120]:
+            - listitem [ref=f27e121]:
+              - link "Cup of Joe" [ref=f27e122] [cursor=pointer]:
+                - /url: artists/cup-of-joe.html
+            - listitem [ref=f27e123]:
+              - link "Arthur Nery" [ref=f27e124] [cursor=pointer]:
+                - /url: artists/arthur-nery.html
+            - listitem [ref=f27e125]:
+              - link "fitterkarma" [ref=f27e126] [cursor=pointer]:
+                - /url: artists/fitterkarma.html
+            - listitem [ref=f27e127]:
+              - link "Ben&Ben" [ref=f27e128] [cursor=pointer]:
+                - /url: artists/ben-and-ben.html
+            - listitem [ref=f27e129]:
+              - link "Skusta Clee" [ref=f27e130] [cursor=pointer]:
+                - /url: artists/skusta-clee.html
+            - listitem [ref=f27e131]:
+              - link "SB19" [ref=f27e132] [cursor=pointer]:
+                - /url: artists/sb19.html
+            - listitem [ref=f27e133]:
+              - link "IV OF SPADES" [ref=f27e134] [cursor=pointer]:
+                - /url: artists/iv-of-spades.html
+            - listitem [ref=f27e135]:
+              - link "December Avenue" [ref=f27e136] [cursor=pointer]:
+                - /url: artists/december-avenue.html
+            - listitem [ref=f27e137]:
+              - link "BINI" [ref=f27e138] [cursor=pointer]:
+                - /url: artists/bini.html
+            - listitem [ref=f27e139]:
+              - link "Rob Deniel" [ref=f27e140] [cursor=pointer]:
+                - /url: artists/rob-deniel.html
+        - generic [ref=f27e141]:
+          - heading "Pop Alternative" [level=3] [ref=f27e142]
+          - list [ref=f27e143]:
+            - listitem [ref=f27e144]:
+              - link "Cup of Joe" [ref=f27e145] [cursor=pointer]:
+                - /url: artists/cup-of-joe.html
+        - generic [ref=f27e146]:
+          - heading "Art Rock" [level=3] [ref=f27e147]
+          - list [ref=f27e148]:
+            - listitem [ref=f27e149]:
+              - link "fitterkarma" [ref=f27e150] [cursor=pointer]:
+                - /url: artists/fitterkarma.html
+        - generic [ref=f27e151]:
+          - heading "Folk Pop" [level=3] [ref=f27e152]
+          - list [ref=f27e153]:
+            - listitem [ref=f27e154]:
+              - link "Ben&Ben" [ref=f27e155] [cursor=pointer]:
+                - /url: artists/ben-and-ben.html
+        - generic [ref=f27e156]:
+          - heading "Hip-Hop" [level=3] [ref=f27e157]
+          - list [ref=f27e158]:
+            - listitem [ref=f27e159]:
+              - link "Skusta Clee" [ref=f27e160] [cursor=pointer]:
+                - /url: artists/skusta-clee.html
+        - generic [ref=f27e161]:
+          - heading "P-Pop" [level=3] [ref=f27e162]
+          - list [ref=f27e163]:
+            - listitem [ref=f27e164]:
+              - link "SB19" [ref=f27e165] [cursor=pointer]:
+                - /url: artists/sb19.html
+            - listitem [ref=f27e166]:
+              - link "BINI" [ref=f27e167] [cursor=pointer]:
+                - /url: artists/bini.html
+        - generic [ref=f27e168]:
+          - heading "Indie Alternative" [level=3] [ref=f27e169]
+          - list [ref=f27e170]:
+            - listitem [ref=f27e171]:
+              - link "IV OF SPADES" [ref=f27e172] [cursor=pointer]:
+                - /url: artists/iv-of-spades.html
+        - generic [ref=f27e173]:
+          - heading "Rock" [level=3] [ref=f27e174]
+          - list [ref=f27e175]:
+            - listitem [ref=f27e176]:
+              - link "December Avenue" [ref=f27e177] [cursor=pointer]:
+                - /url: artists/december-avenue.html
+        - generic [ref=f27e178]:
+          - heading "Pop" [level=3] [ref=f27e179]
+          - list [ref=f27e180]:
+            - listitem [ref=f27e181]:
+              - link "Rob Deniel" [ref=f27e182] [cursor=pointer]:
+                - /url: artists/rob-deniel.html
+    - region [ref=f27e183]:
+      - paragraph [ref=f27e184]: About the project
+      - heading "A little room for OPM." [level=2] [ref=f27e185]
+      - paragraph [ref=f27e186]: OPM Afterhours is a school music discovery project. Read artist stories, explore featured-song notes, and follow verified links to official recordings. Listen to the supplied Multo recording with the browser’s own controls.
+      - paragraph [ref=f27e187]:
+        - text: Artist order follows
+        - link "Billboard Philippines’ first-half 2026 list" [ref=f27e188] [cursor=pointer]:
+          - /url: https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/
+        - text: ", recorded in the original project as published July 24, 2026. This is a mid-year list, not a final full-year ranking."
+      - paragraph [ref=f27e189]: Explore 30 selected songs through their cover artwork and official Spotify, Apple Music, and YouTube destinations. Multo also has a local audio player. Local music stops when you leave its page; platform links open in a new tab.
+  - contentinfo [ref=f27e190]:
+    - paragraph [ref=f27e191]: OPM Afterhours · Filipino music, after dark.
+    - link "Explore the artist directory" [ref=f27e192] [cursor=pointer]:
+      - /url: index.html#artists
