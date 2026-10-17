@@ -33,10 +33,19 @@ section[id] { scroll-margin-top: 1rem; }
 .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 10; padding: 0.75rem; background: var(--accent); color: var(--background); transform: translateY(-200%); }
 .skip-link:focus { transform: translateY(0); }
 /* Flexbox allows the wordmark and ordinary navigation links to share a row. */
-.site-header { border-bottom: 1px solid var(--border); }
+/* A persistent tab reveals navigation with hover, keyboard focus or a tap. */
+body { padding-top: 3.5rem; }
+.site-header { position: fixed; inset: 0 0 auto; z-index: 8; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
+.header-panel { width: 100%; display: grid; grid-template-rows: 0fr; visibility: hidden; background: var(--background); transition: grid-template-rows .25s ease, visibility .25s; }
+.header-panel > .header-inner { overflow: hidden; min-height: 0; padding-block: 0; transition: padding .25s ease; }
+.header-tab { pointer-events: auto; display: flex; align-items: center; justify-content: center; gap: .65rem; min-width: 104px; min-height: 44px; padding: .4rem 1rem; border: 1px solid var(--border); border-top: 0; border-radius: 0 0 14px 14px; background: var(--surface); color: var(--accent); cursor: pointer; font-size: .8rem; }
+.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-panel { grid-template-rows: 1fr; visibility: visible; pointer-events: auto; border-bottom: 1px solid var(--border); }
+.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-inner { padding-block: 1.25rem; }
+.header-toggle:focus-visible ~ .header-tab { outline: 3px solid var(--accent); outline-offset: 3px; }
+.site-header:is(:hover, :focus-within, :has(.header-toggle:checked)) .header-tab .bi { transform: rotate(180deg); }
 .header-inner { width: min(100%, 1600px); padding: 1.25rem var(--gutter); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .brand { font-family: var(--serif); font-size: 1.8rem; text-decoration: none; white-space: nowrap; }
-.brand span { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); }
+.brand-kicker { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--accent); }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 1.75rem; }
 .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
 /* Grid forms the editorial hero and artist room; minmax prevents text overflow. */
@@ -46,7 +55,9 @@ section[id] { scroll-margin-top: 1rem; }
 .text-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 2rem; color: var(--accent); }
 .hero-record, .record-region { text-align: center; }
 .hero-record .small-note, .record-region .small-note { margin-top: 1.5rem; }
-/* Static vinyl: concentric CSS grooves surround a center label. No playback state. */
+/* Decorative CSS rotation runs independently of native audio playback. */
+@keyframes vinyl-spin { to { transform: rotate(360deg); } }
+.vinyl { animation: vinyl-spin 12s linear infinite; }
 .vinyl { width: min(100%, 450px); aspect-ratio: 1; border-radius: 50%; margin: auto; position: relative; display: grid; place-items: center; border: 1px solid #393438; background: repeating-radial-gradient(circle, #121113 0, #121113 3px, #282428 4px, #121113 5px); }
 .vinyl::after { content: ""; position: absolute; width: 2.5%; aspect-ratio: 1; border-radius: 50%; background: var(--background); border: 1px solid #a88992; }
 .vinyl-label { width: 34%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: #65444f; color: var(--text); font-family: var(--serif); font-size: clamp(0.9rem, 2vw, 1.5rem); line-height: 1.3; text-align: center; }
@@ -70,17 +81,17 @@ section[id] { scroll-margin-top: 1rem; }
 .about { max-width: 75ch; }
 .about p:not(.eyebrow) { color: var(--muted); margin-top: 1.5rem; }
 .back-link { display: inline-flex; align-items: center; min-height: 44px; margin: 1.25rem 0; color: var(--muted); }
-.artist-room { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 3rem; padding: 3rem; background: var(--surface); min-height: 560px; }
+.artist-room { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 2rem; padding: 1.75rem; background: var(--surface); min-height: 0; }
 /* Absolute positioning crops muted video inside the charcoal room. The overlay keeps text readable. */
 .background-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -2; pointer-events: none; }
-.artist-room::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(17 16 18 / 88%); }
-.artist-copy h1 { margin: 1.2rem 0; overflow-wrap: anywhere; }
-.biography { max-width: 45ch; color: var(--muted); font-size: 1.1rem; }
-.genre-labels { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.artist-room::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(17 16 18 / 76%); }
+.artist-copy h1 { margin: .65rem 0 1rem; font-size: clamp(2.5rem, 4.2vw, 4rem); overflow-wrap: anywhere; }
+.biography { max-width: 45ch; color: var(--muted); font-size: 1rem; line-height: 1.6; }
+.genre-labels { list-style: none; padding: 0; margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .genre-labels li { border: 1px solid #67545e; padding: 0.2rem 0.7rem; font-size: 0.875rem; color: var(--muted); }
 .artist-portrait { display: inline-flex; align-items: center; min-height: 72px; padding: 1rem; background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: 0.875rem; margin-bottom: 1rem; }
-.tracks-section { padding: 3rem 0; }
-.track-grid { margin-top: 2rem; }
+.tracks-section { padding: 2rem 0; }
+.track-grid { margin-top: 1.25rem; }
 .track-card { min-width: 0; height: 100%; padding: 1.25rem; background: var(--surface); }
 .track-artwork, .artwork-placeholder { width: 100%; aspect-ratio: 1; height: auto; margin-bottom: 1.5rem; }
 .artwork-placeholder { display: grid; place-items: center; background: var(--raised); color: var(--muted); font-size: 0.875rem; }
@@ -112,13 +123,19 @@ summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--mut
 }
 .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; color: var(--muted); }
 .current-artist { color: var(--accent); min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; }
-.biography { max-width: 56ch; }
+/* Keep artist stories compact while preserving native scrolling. */
+.biography { max-width: 56ch; max-height: 12rem; overflow-y: auto; scrollbar-width: none; }
+.biography::-webkit-scrollbar { display: none; }
+.biography > p:first-child { margin-top: 0; }
+.biography > p:last-child { margin-bottom: 0; }
 .biography p + p { margin-top: 1rem; }
 .artist-copy { min-width: 0; }
 .artist-portrait.portrait-placeholder { display: flex; width: min(100%, 320px); aspect-ratio: 4 / 3; margin-top: 1.5rem; padding: 1.25rem; text-align: center; }
 .portrait-placeholder { padding: 1rem; text-align: center; }
-.artist-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.artist-copy .artist-image { max-width: 320px; margin-block: 1.5rem; }
+.artist-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.artist-copy .artist-image { max-width: 180px; margin-block: 1rem; }
+.record-region .vinyl { width: min(100%, 340px); }
+.artist-page .back-link { margin-block: .5rem; }
 .artwork-placeholder { display: flex; flex-direction: column; justify-content: center; gap: 0.75rem; padding: 1rem; text-align: center; }
 .artwork-title { font-family: var(--serif); color: var(--text); font-size: clamp(1.1rem, 2vw, 1.6rem); line-height: 1.25; overflow-wrap: anywhere; }
 .artwork-artist { color: var(--accent); }
@@ -134,3 +151,142 @@ summary { cursor: pointer; padding: 0.7rem 0; min-height: 44px; color: var(--mut
 .content-reference a { display: inline-flex; align-items: center; min-height: 44px; }
 .information-scroll { max-height: none; overflow: visible; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* HTML/CSS artist gallery: radio controls select the featured portrait. */
+.artist-gallery { --portrait-size: clamp(220px, 39vw, 450px); position: relative; overflow: hidden; padding-block: 1rem; }
+.gallery-stage { position: relative; list-style: none; margin: 0; padding: 0; height: calc(var(--portrait-size) + 220px); perspective: 1200px; }
+.gallery-slide { position: absolute; top: 0; left: 50%; width: var(--portrait-size); margin-left: calc(var(--portrait-size) / -2); opacity: 0; visibility: hidden; transform: translateX(0) scale(.7); transition: transform .5s ease, opacity .5s ease; }
+.gallery-slide .artist-card { border: 0; padding: 0; text-align: center; }
+.gallery-slide .artist-image { aspect-ratio: 1; width: 100%; box-shadow: 0 18px 45px #0006; }
+.gallery-slide .card-heading { justify-content: center; }
+.gallery-slide h3 { font-size: clamp(1.5rem, 3vw, 2.4rem); }
+.gallery-slide .card-heading, .gallery-slide .artist-card p, .gallery-slide .card-link { opacity: 0; }
+.gallery-arrows { display: none; justify-content: space-between; position: absolute; top: calc(var(--portrait-size) / 2 - 24px); left: -24px; right: -24px; pointer-events: none; }
+.gallery-arrows label { display: grid; place-items: center; width: 48px; height: 48px; background: var(--background); border: 1px solid var(--accent); border-radius: 50%; color: var(--text); cursor: pointer; pointer-events: auto; font-size: 1.5rem; }
+.gallery-arrows label:hover { background: var(--accent); color: var(--background); }
+.gallery-picker { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; }
+.gallery-picker label { display: grid; place-items: center; width: 44px; height: 44px; color: var(--muted); border-bottom: 2px solid transparent; cursor: pointer; font-size: .8rem; letter-spacing: .08em; }
+.gallery-picker label:hover { color: var(--accent); }
+.gallery-hint { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 1rem; }
+#artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(1) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(1) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(1) .gallery-arrows { display: flex; }
+#artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(10) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-1:checked ~ .gallery-stage > .gallery-slide:nth-child(2) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-1:checked ~ .gallery-picker label[for="artist-choice-1"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-1:focus-visible ~ .gallery-picker label[for="artist-choice-1"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(2) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(2) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(2) .gallery-arrows { display: flex; }
+#artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(1) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-2:checked ~ .gallery-stage > .gallery-slide:nth-child(3) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-2:checked ~ .gallery-picker label[for="artist-choice-2"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-2:focus-visible ~ .gallery-picker label[for="artist-choice-2"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(3) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(3) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(3) .gallery-arrows { display: flex; }
+#artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(2) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-3:checked ~ .gallery-stage > .gallery-slide:nth-child(4) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-3:checked ~ .gallery-picker label[for="artist-choice-3"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-3:focus-visible ~ .gallery-picker label[for="artist-choice-3"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(4) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(4) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(4) .gallery-arrows { display: flex; }
+#artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(3) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-4:checked ~ .gallery-stage > .gallery-slide:nth-child(5) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-4:checked ~ .gallery-picker label[for="artist-choice-4"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-4:focus-visible ~ .gallery-picker label[for="artist-choice-4"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(5) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(5) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(5) .gallery-arrows { display: flex; }
+#artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(4) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-5:checked ~ .gallery-stage > .gallery-slide:nth-child(6) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-5:checked ~ .gallery-picker label[for="artist-choice-5"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-5:focus-visible ~ .gallery-picker label[for="artist-choice-5"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(6) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(6) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(6) .gallery-arrows { display: flex; }
+#artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(5) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-6:checked ~ .gallery-stage > .gallery-slide:nth-child(7) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-6:checked ~ .gallery-picker label[for="artist-choice-6"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-6:focus-visible ~ .gallery-picker label[for="artist-choice-6"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(7) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(7) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(7) .gallery-arrows { display: flex; }
+#artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(6) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-7:checked ~ .gallery-stage > .gallery-slide:nth-child(8) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-7:checked ~ .gallery-picker label[for="artist-choice-7"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-7:focus-visible ~ .gallery-picker label[for="artist-choice-7"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(8) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(8) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(8) .gallery-arrows { display: flex; }
+#artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(7) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-8:checked ~ .gallery-stage > .gallery-slide:nth-child(9) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-8:checked ~ .gallery-picker label[for="artist-choice-8"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-8:focus-visible ~ .gallery-picker label[for="artist-choice-8"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(9) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(9) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(9) .gallery-arrows { display: flex; }
+#artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(8) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-9:checked ~ .gallery-stage > .gallery-slide:nth-child(10) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-9:checked ~ .gallery-picker label[for="artist-choice-9"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-9:focus-visible ~ .gallery-picker label[for="artist-choice-9"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+#artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(10) { opacity: 1; visibility: visible; transform: translateX(0) scale(1); z-index: 3; }
+#artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(10) :is(.card-heading, .artist-card p, .card-link) { opacity: 1; }
+#artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(10) .gallery-arrows { display: flex; }
+#artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(9) { opacity: .45; visibility: visible; transform: translateX(-88%) scale(.76) rotateY(12deg); z-index: 1; }
+#artist-choice-10:checked ~ .gallery-stage > .gallery-slide:nth-child(1) { opacity: .45; visibility: visible; transform: translateX(88%) scale(.76) rotateY(-12deg); z-index: 1; }
+#artist-choice-10:checked ~ .gallery-picker label[for="artist-choice-10"] { color: var(--accent); border-color: var(--accent); }
+#artist-choice-10:focus-visible ~ .gallery-picker label[for="artist-choice-10"] { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Decorative icon glyphs inherit the surrounding theme and text size. */
+.bi { display: inline-block; flex-shrink: 0; line-height: 1; vertical-align: -.125em; }
+.back-link { gap: .5rem; }
+.text-link .bi, .card-link .bi { margin-left: .35rem; }
+.listening-links .bi { font-size: 1.1rem; }
+.gallery-arrows .bi { font-size: 1.25rem; }
+
+/* Native radio choices switch records without scripts. */
+.song-picker { border: 0; padding: 0; margin: 1rem 0; min-width: 0; }
+.song-picker legend { color: var(--muted); font-size: .8rem; margin-bottom: .6rem; }
+.song-vinyls { display: flex; gap: 1rem; }
+.song-option { display: flex; flex-direction: column; align-items: center; gap: .5rem; width: 90px; min-width: 0; cursor: pointer; text-align: center; font-size: .75rem; line-height: 1.3; color: var(--muted); }
+.mini-vinyl { display: grid; place-items: center; width: 76px; max-width: 100%; aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--border); background: repeating-radial-gradient(circle, #121113 0 3px, #383036 4px, #121113 5px); }
+.mini-label { display: grid; place-items: center; width: 46%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #65444f; font-size: .5rem; color: var(--text); }
+.mini-label img { width: 100%; height: 100%; }
+.selected-record { display: none; }
+.selected-song-title { margin-top: 1rem; font-family: var(--serif); font-size: 1.5rem; }
+.selected-record audio { margin-top: .75rem; }
+.selected-record .listening-links { max-width: 360px; margin-inline: auto; text-align: left; }
+.selected-record .vinyl-label span { padding: .4rem; }
+.artist-room:has(#song-choice-1:checked) .selected-record-1 { display: block; }
+.artist-room:has(#song-choice-1:checked) label[for="song-choice-1"] { color: var(--accent); }
+.artist-room:has(#song-choice-1:checked) label[for="song-choice-1"] .mini-vinyl { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.artist-room:has(#song-choice-1:focus-visible) label[for="song-choice-1"] { outline: 3px solid var(--accent); outline-offset: 5px; }
+.artist-room:has(#song-choice-2:checked) .selected-record-2 { display: block; }
+.artist-room:has(#song-choice-2:checked) label[for="song-choice-2"] { color: var(--accent); }
+.artist-room:has(#song-choice-2:checked) label[for="song-choice-2"] .mini-vinyl { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.artist-room:has(#song-choice-2:focus-visible) label[for="song-choice-2"] { outline: 3px solid var(--accent); outline-offset: 5px; }
+.artist-room:has(#song-choice-3:checked) .selected-record-3 { display: block; }
+.artist-room:has(#song-choice-3:checked) label[for="song-choice-3"] { color: var(--accent); }
+.artist-room:has(#song-choice-3:checked) label[for="song-choice-3"] .mini-vinyl { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.artist-room:has(#song-choice-3:focus-visible) label[for="song-choice-3"] { outline: 3px solid var(--accent); outline-offset: 5px; }
+
+/* Artist names appear beside the persistent navigation arrows. */
+.arrow-tooltip { position: absolute; top: 50%; transform: translateY(-50%); width: max-content; max-width: min(65vw, 240px); padding: .45rem .75rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font-family: var(--sans); font-size: .8rem; line-height: 1.4; opacity: 0; visibility: hidden; pointer-events: none; }
+.artist-arrow.previous .arrow-tooltip { left: calc(100% + .5rem); }
+.artist-arrow.next .arrow-tooltip { right: calc(100% + .5rem); }
+.artist-arrow:is(:hover, :focus-visible) .arrow-tooltip { opacity: 1; visibility: visible; }
+
+/* Cover artwork follows the selected radio; video sits above its cover fallback. */
+.song-background { display: none; position: absolute; inset: -24px; width: calc(100% + 48px); max-width: none; height: calc(100% + 48px); object-fit: cover; object-position: center; filter: blur(20px); z-index: -3; pointer-events: none; }
+.artist-room .background-video { display: none; }
+.artist-room:has(#song-choice-1:checked) .song-background-1 { display: block; }
+.artist-room:has(#song-choice-1:checked) .song-video-1 { display: block; }
+.artist-room:has(#song-choice-2:checked) .song-background-2 { display: block; }
+.artist-room:has(#song-choice-2:checked) .song-video-2 { display: block; }
+.artist-room:has(#song-choice-3:checked) .song-background-3 { display: block; }
+.artist-room:has(#song-choice-3:checked) .song-video-3 { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .artist-room .background-video { display: none !important; }
+}

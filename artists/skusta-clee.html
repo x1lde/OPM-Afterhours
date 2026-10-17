@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore Skusta Clee’s hip-hop, R&amp;B, and rock directions through Since Day One featuring Flow G and Kalimutan Ka, with official listening links.">
   <title>Skusta Clee — Songs &amp; Artist Story | OPM Afterhours</title>
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" href="../assets/favicon.ico?v=moon-record" sizes="any">
+  <link rel="icon" href="../assets/favicon.svg?v=moon-record" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=moon-record">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/style.css?v=cover-backgrounds">
+  <link rel="stylesheet" href="../css/responsive.css?v=polish-2">
+  <link rel="stylesheet" href="../css/refinements.css?v=artist-avatar">
 </head>
 <body>
   <!-- Shared navigation: ordinary links work without scripting. -->
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
+    <input class="header-toggle visually-hidden" type="checkbox" id="header-toggle" aria-label="Keep navigation open">
+    <div class="header-panel">
     <div class="header-inner">
-      <a class="brand" href="../index.html"><span>OPM</span> Afterhours</a>
+      <a class="brand" href="../index.html" aria-label="OPM Afterhours home"><img class="brand-mark" src="../assets/logo-mark.svg" alt="" width="46" height="46"><span class="brand-wordmark"><span class="brand-kicker">OPM</span><span class="brand-name">Afterhours</span></span></a>
       <nav aria-label="Main navigation">
         <a href="../index.html">Home</a>
         <a class="nav-active" href="../index.html#artists">Artists</a>
@@ -22,52 +28,55 @@
         <a href="../index.html#about">About</a>
       </nav>
     </div>
+    </div>
+    <label class="header-tab" for="header-toggle"><span>Menu</span><i class="bi bi-chevron-down" aria-hidden="true"></i></label>
   </header>
   <main id="main" tabindex="-1" class="page-shell artist-page">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a class="back-link" href="../index.html#artists">← Artist directory</a><span aria-hidden="true">/</span><a class="current-artist" href="skusta-clee.html" aria-current="page">Skusta Clee</a></nav>
-    <!-- Artist identity and static listening-room composition. -->
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a class="back-link" href="../index.html#artists"><i class="bi bi-arrow-left" aria-hidden="true"></i> Artist directory</a><span aria-hidden="true">/</span><a class="current-artist" href="skusta-clee.html" aria-current="page">Skusta Clee</a></nav>
+    <!-- Artist identity and listening-room composition. -->
     <section class="artist-room" aria-labelledby="artist-title">
+      <input class="song-choice visually-hidden" type="radio" name="song-choice" id="song-choice-1" aria-label="Select Since Day One" checked>
+      <input class="song-choice visually-hidden" type="radio" name="song-choice" id="song-choice-2" aria-label="Select Kalimutan Ka">
+      <input class="song-choice visually-hidden" type="radio" name="song-choice" id="song-choice-3" aria-label="Select Bebe">
+      <!-- Selected artwork also backs the video when motion is reduced. -->
+      <img class="song-background song-background-1" src="../assets/covers/skusta-clee-since-day-one.jpg" alt="" aria-hidden="true">
+      <img class="song-background song-background-2" src="../assets/covers/skusta-clee-kalimutan-ka.jpg" alt="" aria-hidden="true">
+      <img class="song-background song-background-3" src="../assets/covers/skusta-clee-bebe.jpg" alt="" aria-hidden="true">
 
-      <div class="artist-copy"><p class="source-note">No. 05 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">Skusta Clee</h1><!-- Original biography summary; research references are in docs/content-sources.md. -->
-        <div class="biography"><p>Skusta Clee is a Filipino hip-hop artist whose recordings move across rap, pop, R&amp;B, and rock-adjacent ballads. His versatility is a central subject of Billboard Philippines’ interview with him and frequent collaborator Flow G. Rather than working within a single sound, he uses both melodic singing and rap to connect with listeners across different corners of contemporary Filipino music.</p><p>Kalimutan Ka introduced a rock-oriented direction to audiences familiar with his pop and hip-hop releases. Other recent recordings include Bebe, an R&amp;B-infused pop single, and Since Day One, his collaboration with Flow G. The contrast between Kalimutan Ka and Since Day One makes these project selections a useful starting point for exploring his range. His performance with Jay Durias also connects his own songs with an older Filipino R&amp;B tradition, showing another part of his musical range.</p></div>
+      <div class="artist-copy"><p class="source-note">No. 05 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/" target="_blank" rel="noopener noreferrer">Billboard Philippines · first half of 2026</a></p><div class="artist-identity"><img class="artist-avatar" src="../assets/artists/skusta_clee.jfif" alt="" width="56" height="56"><h1 id="artist-title">Skusta Clee</h1></div><!-- Original biography summary; research references are in docs/content-sources.md. -->
+        <p class="bio-heading">About the artist <span>Scroll to read <i class="bi bi-arrow-down" aria-hidden="true"></i></span></p>
+        <div class="biography" tabindex="0" role="region" aria-label="Artist biography"><p>Skusta Clee is a Filipino hip-hop artist whose recordings move across rap, pop, R&amp;B, and rock-adjacent ballads. His versatility is a central subject of Billboard Philippines’ interview with him and frequent collaborator Flow G. Rather than working within a single sound, he uses both melodic singing and rap to connect with listeners across different corners of contemporary Filipino music.</p><p>Kalimutan Ka introduced a rock-oriented direction to audiences familiar with his pop and hip-hop releases. Other recent recordings include Bebe, an R&amp;B-infused pop single, and Since Day One, his collaboration with Flow G. The contrast between Kalimutan Ka and Since Day One makes these project selections a useful starting point for exploring his range. His performance with Jay Durias also connects his own songs with an older Filipino R&amp;B tradition, showing another part of his musical range.</p></div>
         <ul class="genre-labels" aria-label="Artist genres"><li>OPM</li><li>Hip-Hop</li></ul>
-        <div class="artist-portrait portrait-placeholder"><span class="portrait-number" aria-hidden="true">05</span><span>Skusta Clee</span><span class="small-note">Portrait awaiting an authorized image</span></div>
-        <p class="small-note">Three featured slots · project selections</p>
+        <fieldset class="song-picker"><legend>Choose your next listen</legend><div class="song-vinyls"><label class="song-option" for="song-choice-1"><span class="mini-vinyl"><span class="mini-label"><img src="../assets/covers/skusta-clee-since-day-one.jpg" alt=""></span></span><span>Since Day One</span></label><label class="song-option" for="song-choice-2"><span class="mini-vinyl"><span class="mini-label"><img src="../assets/covers/skusta-clee-kalimutan-ka.jpg" alt=""></span></span><span>Kalimutan Ka</span></label><label class="song-option" for="song-choice-3"><span class="mini-vinyl"><span class="mini-label"><img src="../assets/covers/skusta-clee-bebe.jpg" alt=""></span></span><span>Bebe</span></label></div></fieldset>
+        <p class="small-note">Three tracks. A little closer to the artist.</p>
       </div>
-      <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><span>OPM<br>Afterhours</span></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
+      <div class="record-region"><p class="turntable-heading"><span class="status-dot" aria-hidden="true"></span> On the turntable</p><div class="selected-record selected-record-1"><div class="vinyl" role="img" aria-label="Since Day One record"><div class="vinyl-label"><img src="../assets/covers/skusta-clee-since-day-one.jpg" alt="Cover artwork for Since Day One by Skusta Clee feat. Flow G"></div></div><p class="selected-song-title">Since Day One</p></div><div class="selected-record selected-record-2"><div class="vinyl" role="img" aria-label="Kalimutan Ka record"><div class="vinyl-label"><img src="../assets/covers/skusta-clee-kalimutan-ka.jpg" alt="Cover artwork for Kalimutan Ka by Skusta Clee"></div></div><p class="selected-song-title">Kalimutan Ka</p></div><div class="selected-record selected-record-3"><div class="vinyl" role="img" aria-label="Bebe record"><div class="vinyl-label"><img src="../assets/covers/skusta-clee-bebe.jpg" alt="Cover artwork for Bebe by Skusta Clee"></div></div><p class="selected-song-title">Bebe</p></div></div>
     </section>
     <!-- Every supplied recording uses native audio. Missing media has no player. -->
-    <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Playback ends when you navigate to another page.</p></div>
+    <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Listen on your favorite platform.</p></div>
       <ol class="track-grid">
         <li><article class="track-card">
-          <div class="artwork-placeholder"><span class="artwork-artist">Skusta Clee</span><span class="artwork-title">Since Day One</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 01</p><h3>Since Day One</h3><p class="track-credit">Skusta Clee feat. Flow G</p>
-          <p class="availability">Local audio not supplied</p>
+          <img class="track-artwork" src="../assets/covers/skusta-clee-since-day-one.jpg" alt="Cover artwork for Since Day One by Skusta Clee feat. Flow G" loading="lazy"><p class="eyebrow">Track 01</p><h3>Since Day One</h3><p class="track-credit">Skusta Clee feat. Flow G</p>
           <!-- Regular platform links work without scripts or embedded players. -->
-          <div class="listening-links"><a href="https://open.spotify.com/track/4yzDFThA5Xd1s9aZzwyxCk" target="_blank" rel="noopener noreferrer" aria-label="Listen to Since Day One by Skusta Clee on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=T8DLCWW6EpY" target="_blank" rel="noopener noreferrer" aria-label="Watch Since Day One by Skusta Clee on YouTube — music video (opens in a new tab)">Watch on YouTube <span class="link-format">music video</span></a></div>
+          <div class="listening-links"><a href="https://open.spotify.com/track/4yzDFThA5Xd1s9aZzwyxCk" target="_blank" rel="noopener noreferrer" aria-label="Listen to Since Day One by Skusta Clee on Spotify (opens in a new tab)"><i class="bi bi-spotify" aria-hidden="true"></i> Listen on Spotify</a><a href="https://music.apple.com/us/song/1874403321" target="_blank" rel="noopener noreferrer" aria-label="Listen to Since Day One on Apple Music (opens in a new tab)"><i class="bi bi-apple" aria-hidden="true"></i> Listen on Apple Music</a><a href="https://www.youtube.com/watch?v=T8DLCWW6EpY" target="_blank" rel="noopener noreferrer" aria-label="Watch Since Day One by Skusta Clee on YouTube — music video (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <span class="link-format">music video</span></a></div>
           <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Since Day One information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Skusta Clee feat. Flow G</dd></div><div><dt>Release</dt><dd>February 1, 2026</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Featured artist</dt><dd>Flow G</dd></div></dl><p class="song-description">Since Day One brings Skusta Clee and Flow G together on a collaborative single. Billboard Philippines’ interview with both performers places the recording within their work in contemporary Filipino hip-hop. The official video and Spotify destination retain the Flow G collaboration selected for this project.</p><p class="content-reference"><a href="https://billboardphilippines.com/cover-story/skusta-clee-flow-g-since-day-one-billboard-hot-100/" target="_blank" rel="noopener noreferrer">Source for Since Day One information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder"><span class="artwork-artist">Skusta Clee</span><span class="artwork-title">Kalimutan Ka</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 02</p><h3>Kalimutan Ka</h3><p class="track-credit">Skusta Clee</p>
-          <p class="availability">Local audio not supplied</p>
+          <img class="track-artwork" src="../assets/covers/skusta-clee-kalimutan-ka.jpg" alt="Cover artwork for Kalimutan Ka by Skusta Clee" loading="lazy"><p class="eyebrow">Track 02</p><h3>Kalimutan Ka</h3><p class="track-credit">Skusta Clee</p>
           <!-- Regular platform links work without scripts or embedded players. -->
-          <div class="listening-links"><a href="https://open.spotify.com/track/7dXZnGGBn9Kfu8NCnrRl3w" target="_blank" rel="noopener noreferrer" aria-label="Listen to Kalimutan Ka by Skusta Clee on Spotify (opens in a new tab)">Listen on Spotify</a></div>
+          <div class="listening-links"><a href="https://open.spotify.com/track/7dXZnGGBn9Kfu8NCnrRl3w" target="_blank" rel="noopener noreferrer" aria-label="Listen to Kalimutan Ka by Skusta Clee on Spotify (opens in a new tab)"><i class="bi bi-spotify" aria-hidden="true"></i> Listen on Spotify</a><a href="https://music.apple.com/ph/album/kalimutan-ka/1797062661?i=1797062667&amp;uo=4" target="_blank" rel="noopener noreferrer" aria-label="Listen to Kalimutan Ka on Apple Music (opens in a new tab)"><i class="bi bi-apple" aria-hidden="true"></i> Listen on Apple Music</a><a href="https://www.youtube.com/watch?v=eOAEpMOo-pA" target="_blank" rel="noopener noreferrer" aria-label="Watch Kalimutan Ka on YouTube (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <span class="link-format">music video</span></a></div>
           <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Kalimutan Ka information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Skusta Clee</dd></div><div><dt>Release</dt><dd>February 12, 2025</dd></div><div><dt>Release type</dt><dd>Single</dd></div></dl><p class="song-description">Kalimutan Ka presents a rock-adjacent side of Skusta Clee’s recordings. In his Billboard Philippines interview, he discusses sharing a musical direction that audiences had not previously heard from him. This selection uses the original recording rather than the separately released acoustic edition.</p><p class="content-reference"><a href="https://billboardphilippines.com/cover-story/skusta-clee-flow-g-since-day-one-billboard-hot-100/" target="_blank" rel="noopener noreferrer">Source for Kalimutan Ka information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder"><span class="artwork-artist">Skusta Clee</span><span class="artwork-title">Selection pending</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 03</p><h3>Selection pending</h3><p class="track-credit">Skusta Clee</p>
-          <p class="availability">Selection awaiting approval</p>
-          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Selection pending information"><p>The third Skusta Clee track awaits client approval. Since Day One (feat. Flow G) and Kalimutan Ka remain the two confirmed selections.</p></div></details>
+          <img class="track-artwork" src="../assets/covers/skusta-clee-bebe.jpg" alt="Cover artwork for Bebe by Skusta Clee" loading="lazy"><p class="eyebrow">Track 03</p><h3>Bebe</h3><p class="track-credit">Skusta Clee</p>
+          <div class="listening-links"><a href="https://open.spotify.com/track/48uhAuFJLnUwti49dcyjmZ" target="_blank" rel="noopener noreferrer" aria-label="Listen to Bebe by Skusta Clee on Spotify (opens in a new tab)"><i class="bi bi-spotify" aria-hidden="true"></i> Listen on Spotify</a><a href="https://music.apple.com/us/album/bebe-single/1853581405" target="_blank" rel="noopener noreferrer" aria-label="Listen to Bebe by Skusta Clee on Apple Music (opens in a new tab)"><i class="bi bi-apple" aria-hidden="true"></i> Listen on Apple Music</a><a href="https://www.youtube.com/watch?v=cuNJIQA_efc" target="_blank" rel="noopener noreferrer" aria-label="Watch Bebe by Skusta Clee on YouTube (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <span class="link-format">music video</span></a></div>
+          <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Bebe information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Skusta Clee</dd></div><div><dt>Release</dt><dd>November 17, 2025</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Label</dt><dd>Saucy Island</dd></div></dl><p class="song-description">Bebe pairs a romantic serenade with an R&amp;B-infused pop sound. Released in November 2025 alongside an official music video, it adds a softer melodic contrast to Kalimutan Ka and the Flow G collaboration Since Day One, rounding out this introduction to Skusta Clee's range.</p><p class="content-reference"><a href="https://billboardphilippines.com/music/news/skusta-clee-music-video-bebe/" target="_blank" rel="noopener noreferrer">Source for Bebe information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
       </ol>
     </section>
-    <!-- Adjacent pages wrap around the ten-artist catalog. These remain visible on mobile. -->
-    <nav class="adjacent-navigation" aria-label="Adjacent artists">
-      <a class="adjacent-link" href="ben-and-ben.html"><span class="eyebrow">Previous artist</span><span>← Ben&amp;Ben</span></a>
-      <a class="adjacent-link" href="sb19.html"><span class="eyebrow">Next artist</span><span>SB19 →</span></a>
-    </nav>
-    <nav class="floating-navigation" aria-label="Desktop artist navigation">
-      <a class="artist-arrow previous" href="ben-and-ben.html" aria-label="Previous artist: Ben&amp;Ben">←</a>
-      <a class="artist-arrow next" href="sb19.html" aria-label="Next artist: SB19">→</a>
+    <nav class="floating-navigation" aria-label="Artist navigation">
+      <a class="artist-arrow previous" href="ben-and-ben.html" aria-label="Previous artist: Ben&amp;Ben">←<span class="arrow-tooltip">Previous artist: Ben&amp;Ben</span></a>
+      <a class="artist-arrow next" href="sb19.html" aria-label="Next artist: SB19">→<span class="arrow-tooltip">Next artist: SB19</span></a>
     </nav>
   </main>
   <footer class="site-footer"><p>OPM Afterhours · Filipino music, after dark.</p><a href="../index.html#artists">Explore the artist directory</a></footer>

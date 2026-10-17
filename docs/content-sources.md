@@ -519,3 +519,13 @@ The existing Multo JPEG, MP3 and MP4 were retained byte-for-byte under the proje
 Accessed 2026-10-13. All 29 submitted Spotify track IDs returned public track metadata matching the selected title, performer, collaborator and version. The listings marked each playable in the research context; this is not a global availability guarantee. A newer album/reissue date does not replace the verified original release date. The linked Multo belongs to Silakbo; fitterkarma titles also appear on its 2026 album; SB19 titles also appear on Wakas At Simula; Rob Deniel titles can appear on Wander Boy. No acoustic, live, or stripped-down recording was silently substituted.
 
 Official upload descriptions were directly read for the additional music credits published for Tingin, Pagsamo, Higa, Lifetime (Reimagined), Blush, Step Back, RomCom and Pag-Ibig ay Kanibalismo II. Video-production staff were kept separate from music credits. Binhi’s upload describes video production but does not establish a music-producer credit; none was inferred. Unang Kilig’s licensed audio lists March 5, 2026 while regional announcements use March 6; the page conservatively displays 2026.
+
+
+## Bebe added October 17, 2026
+
+User approved Bebe as Skusta Clee's third selection, replacing the pending slot and superseding earlier approval-pending notes. Release date and label: [Apple Music](https://music.apple.com/us/album/bebe-single/1853581405). Style and video context: [Billboard Philippines](https://billboardphilippines.com/music/news/skusta-clee-music-video-bebe/). Official video: [Skusta Clee TV](https://www.youtube.com/watch?v=cuNJIQA_efc). Listening destinations include Apple Music and the subsequently verified [Spotify track](https://open.spotify.com/track/48uhAuFJLnUwti49dcyjmZ). No local audio or video was downloaded.
+
+
+## Platform links completed October 17, 2026
+
+All 30 featured cards now include Spotify, Apple Music, and YouTube destinations. Apple Music titles and artists were matched using Apple's catalog search and reviewed song pages; exact recording variants were preserved. Lookup metadata is recorded in platform-links.json. Added official YouTube videos for maryclaire (6ElJlioaXEo), Ulap (nXOe-p94AQI), and Kalimutan Ka (eOAEpMOo-pA). Existing Spotify and YouTube destinations were retained. These counts supersede earlier historical completion counts.

@@ -2,11 +2,8 @@
 @media (max-width: 1000px) {
   .hero { gap: 2rem; min-height: auto; padding-block: 4rem; }
   .artist-grid, .genre-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .artist-room { padding: 2rem; gap: 2rem; min-height: auto; }
+  .artist-room { padding: 1.5rem; gap: 1.5rem; min-height: auto; }
   .track-grid { grid-template-columns: minmax(0, 1fr); }
-  .track-card { display: grid; grid-template-columns: 140px minmax(0, 1fr); column-gap: 1.5rem; }
-  .track-artwork, .artwork-placeholder { grid-column: 1; grid-row: 1 / span 12; margin-bottom: 0; }
-  .track-card > :not(.track-artwork):not(.artwork-placeholder) { grid-column: 2; }
   .section-heading { flex-direction: column; align-items: start; gap: 1rem; }
 }
 /* Phones: visible navigation, stacked content, and comfortable touch targets. */
@@ -18,15 +15,16 @@
   .brand { font-size: 1.6rem; }
   .hero, .artist-room { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-block: 3rem; gap: 3rem; }
-  .hero-record .vinyl, .record-region .vinyl { width: min(100%, 300px); }
+  .hero-record .vinyl { width: min(100%, 300px); }
+  .record-region .vinyl { width: min(100%, 220px); }
   .artist-grid, .genre-grid { grid-template-columns: minmax(0, 1fr); }
   .directory { padding-block: 3rem; }
   .artist-page { padding-inline: var(--gutter); }
   .artist-room { padding: 1.25rem; }
-  .artist-copy h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
-  .track-card { display: block; padding: 1rem; }
-  .track-artwork, .artwork-placeholder { margin-bottom: 1.5rem; }
-  .floating-navigation { display: none; }
+  .artist-copy h1 { font-size: clamp(2.25rem, 10vw, 3rem); }
+  .artist-arrow { width: 36px; height: 44px; font-size: 1.2rem; }
+  .artist-arrow.previous { left: .15rem; }
+  .artist-arrow.next { right: .15rem; }
   .adjacent-navigation { flex-direction: column; gap: 0.5rem; }
   .adjacent-link { border-bottom: 1px solid var(--border); padding: 1rem 0; }
   .adjacent-link:last-child { text-align: left; }
@@ -41,7 +39,6 @@
 
 /* Long biographies and platform labels must shrink with their grid column. */
 @media (max-width: 1000px) and (min-width: 601px) {
-  .track-card { align-items: start; }
   .artwork-title { font-size: 1.1rem; }
   .artwork-placeholder .small-note { font-size: 0.75rem; }
 }

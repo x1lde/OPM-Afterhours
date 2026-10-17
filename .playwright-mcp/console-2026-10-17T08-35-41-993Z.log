@@ -1,0 +1,2 @@
+[ 1420827ms] [LOG] Live reload enabled. @ http://127.0.0.1:5500/artists/cup-of-joe.html?platforms=3:114
+[ 1897041ms] [ERROR] Refused to apply style from 'http://127.0.0.1:5500/css/refinements.css?v=1' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled. @ http://127.0.0.1:5500/artists/cup-of-joe.html?design-review=20261017:0

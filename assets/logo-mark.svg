@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>OPM Afterhours moon record</title>
+  <defs>
+    <mask id="crescent">
+      <circle cx="29" cy="35" r="24" fill="white"/>
+      <circle cx="39" cy="27" r="22" fill="black"/>
+    </mask>
+  </defs>
+  <circle cx="29" cy="35" r="24" fill="#211a23" stroke="#b98598" stroke-width="1.5"/>
+  <circle cx="29" cy="35" r="18" stroke="#775563" stroke-width="1.2"/>
+  <circle cx="29" cy="35" r="13" stroke="#775563" stroke-width="1.2"/>
+  <circle cx="29" cy="35" r="24" fill="#e2afba" mask="url(#crescent)"/>
+  <circle cx="29" cy="35" r="6" fill="#e2afba"/>
+  <circle cx="29" cy="35" r="2" fill="#211a23"/>
+  <path d="M52 4 54.7 11.3 62 14 54.7 16.7 52 24 49.3 16.7 42 14 49.3 11.3Z" fill="#f5eee9"/>
+</svg>

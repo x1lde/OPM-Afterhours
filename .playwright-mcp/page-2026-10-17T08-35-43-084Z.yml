@@ -1,0 +1,127 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner:
+    - checkbox "Keep navigation open"
+    - generic [ref=f3e3] [cursor=pointer]:
+      - generic [ref=f3e4]: Menu
+      - generic [aria-hidden] [ref=f3e5]: 
+  - main [ref=f3e6]:
+    - navigation "Breadcrumb" [ref=f3e7]:
+      - link "Artist directory" [ref=f3e8] [cursor=pointer]:
+        - /url: ../index.html#artists
+        - generic [aria-hidden] [ref=f3e9]: 
+        - text: Artist directory
+      - generic [aria-hidden] [ref=f3e10]: /
+      - link "Cup of Joe" [ref=f3e11] [cursor=pointer]:
+        - /url: cup-of-joe.html
+    - region [ref=f3e12]:
+      - generic [ref=f3e13]:
+        - paragraph [ref=f3e14]:
+          - text: No. 01 ·
+          - link "Billboard Philippines · first half of 2026" [ref=f3e15] [cursor=pointer]:
+            - /url: https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/
+        - heading "Cup of Joe" [level=1] [ref=f3e16]
+        - region "Artist biography" [ref=f3e17]:
+          - paragraph [ref=f3e18]: Cup of Joe is a pop-alternative band based in Baguio. Its line-up brings together vocalists Gian Bernardino and Raphaell Ridao, guitarists Gabriel and CJ Fernandez, and keyboardist Xen Gareza. The group’s songs combine melodic band arrangements with emotionally direct Filipino songwriting. Early releases such as Nag-Iisang Muli, Sagada, and Estranghero established a catalog that later grew into the 2023 EP Patutunguhan.
+          - paragraph [ref=f3e19]: The collaboration Tingin pairs the band with Janine Teñoso, while Misteryoso highlights its work with producer Shadiel Chan. Multo first appeared as a single in 2024 before joining the 2025 debut album Silakbo, whose sequence explores stages of grief. Together, these releases offer an introduction to a band moving between intimate storytelling and expansive pop arrangements, with two lead voices at the center of its musical identity.
+        - list "Artist genres" [ref=f3e20]:
+          - listitem [ref=f3e21]: OPM
+          - listitem [ref=f3e22]: Pop Alternative
+        - img "Cup of Joe" [ref=f3e23]
+        - paragraph [ref=f3e24]: Three featured slots · project selections
+      - generic [ref=f3e25]:
+        - img "Static decorative vinyl record" [ref=f3e26]:
+          - img "Supplied cover artwork for Multo by Cup of Joe" [ref=f3e28]
+        - paragraph [ref=f3e29]: Static vinyl illustration · decorative only
+    - region [ref=f3e30]:
+      - generic [ref=f3e31]:
+        - generic [ref=f3e32]:
+          - paragraph [ref=f3e33]: A closer listen
+          - heading "Featured tracks." [level=2] [ref=f3e34]
+        - paragraph [ref=f3e35]: Playback ends when you navigate to another page.
+      - list [ref=f3e36]:
+        - listitem [ref=f3e37]:
+          - article [ref=f3e38]:
+            - img "Supplied cover artwork for Multo by Cup of Joe" [ref=f3e39]
+            - paragraph [ref=f3e40]: Featured slot 01
+            - heading "Multo" [level=3] [ref=f3e41]
+            - paragraph [ref=f3e42]: Cup of Joe
+            - paragraph [ref=f3e43]: Supplied audio available
+            - generic "Play Multo by Cup of Joe" [ref=f3e44]: Your browser does not support audio playback. .
+            - generic [ref=f3e45]:
+              - link "Listen to Multo by Cup of Joe on Spotify (opens in a new tab)" [ref=f3e46] [cursor=pointer]:
+                - /url: https://open.spotify.com/track/5tlb0AxuzsMWL2GtEppXGX
+                - generic [aria-hidden] [ref=f3e47]: 
+                - text: Listen on Spotify
+              - link "Watch Multo by Cup of Joe on YouTube — music video (opens in a new tab)" [ref=f3e48] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=CcS1fsuT10M
+                - generic [aria-hidden] [ref=f3e49]: 
+                - text: Watch on YouTube
+                - generic [ref=f3e50]: music video
+            - group [ref=f3e51]:
+              - generic "Song information" [ref=f3e52] [cursor=pointer]
+        - listitem [ref=f3e53]:
+          - article [ref=f3e54]:
+            - generic [ref=f3e55]:
+              - generic [ref=f3e56]: Cup of Joe
+              - generic [ref=f3e57]: Tingin
+              - generic [ref=f3e58]: Cover awaiting an authorized image
+            - paragraph [ref=f3e59]: Featured slot 02
+            - heading "Tingin" [level=3] [ref=f3e60]
+            - paragraph [ref=f3e61]: Cup of Joe feat. Janine Teñoso
+            - paragraph [ref=f3e62]: Local audio not supplied
+            - generic [ref=f3e63]:
+              - link "Listen to Tingin by Cup of Joe on Spotify (opens in a new tab)" [ref=f3e64] [cursor=pointer]:
+                - /url: https://open.spotify.com/track/7b89Ffklm3xh4GI37vlZDZ
+                - generic [aria-hidden] [ref=f3e65]: 
+                - text: Listen on Spotify
+              - link "Watch Tingin by Cup of Joe on YouTube — music video (opens in a new tab)" [ref=f3e66] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=6QlSbMKjWSQ
+                - generic [aria-hidden] [ref=f3e67]: 
+                - text: Watch on YouTube
+                - generic [ref=f3e68]: music video
+            - group [ref=f3e69]:
+              - generic "Song information" [ref=f3e70] [cursor=pointer]
+        - listitem [ref=f3e71]:
+          - article [ref=f3e72]:
+            - generic [ref=f3e73]:
+              - generic [ref=f3e74]: Cup of Joe
+              - generic [ref=f3e75]: Misteryoso
+              - generic [ref=f3e76]: Cover awaiting an authorized image
+            - paragraph [ref=f3e77]: Featured slot 03
+            - heading "Misteryoso" [level=3] [ref=f3e78]
+            - paragraph [ref=f3e79]: Cup of Joe
+            - paragraph [ref=f3e80]: Local audio not supplied
+            - generic [ref=f3e81]:
+              - link "Listen to Misteryoso by Cup of Joe on Spotify (opens in a new tab)" [ref=f3e82] [cursor=pointer]:
+                - /url: https://open.spotify.com/track/0kE1SmlJNLg14dgdo9kJws
+                - generic [aria-hidden] [ref=f3e83]: 
+                - text: Listen on Spotify
+              - link "Watch Misteryoso by Cup of Joe on YouTube — music video (opens in a new tab)" [ref=f3e84] [cursor=pointer]:
+                - /url: https://www.youtube.com/watch?v=GpQ63UI7mQc
+                - generic [aria-hidden] [ref=f3e85]: 
+                - text: Watch on YouTube
+                - generic [ref=f3e86]: music video
+            - group [ref=f3e87]:
+              - generic "Song information" [ref=f3e88] [cursor=pointer]
+    - navigation "Adjacent artists" [ref=f3e89]:
+      - link "Previous artist ← Rob Deniel" [ref=f3e90] [cursor=pointer]:
+        - /url: rob-deniel.html
+        - generic [ref=f3e91]: Previous artist
+        - generic [ref=f3e92]: ← Rob Deniel
+      - link "Next artist Arthur Nery →" [ref=f3e93] [cursor=pointer]:
+        - /url: arthur-nery.html
+        - generic [ref=f3e94]: Next artist
+        - generic [ref=f3e95]: Arthur Nery →
+    - navigation "Desktop artist navigation":
+      - 'link "Previous artist: Rob Deniel" [ref=f3e96] [cursor=pointer]':
+        - /url: rob-deniel.html
+        - text: ←
+      - 'link "Next artist: Arthur Nery" [ref=f3e97] [cursor=pointer]':
+        - /url: arthur-nery.html
+        - text: →
+  - contentinfo [ref=f3e98]:
+    - paragraph [ref=f3e99]: OPM Afterhours · Filipino music, after dark.
+    - link "Explore the artist directory" [ref=f3e100] [cursor=pointer]:
+      - /url: ../index.html#artists

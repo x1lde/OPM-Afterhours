@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Meet folk-pop ensemble Ben&amp;Ben and explore Duyan, Lifetime (Reimagined), and Autumn (Reimagined), with verified release notes and listening links.">
   <title>Ben&amp;Ben — Songs &amp; Artist Story | OPM Afterhours</title>
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" href="../assets/favicon.ico?v=moon-record" sizes="any">
+  <link rel="icon" href="../assets/favicon.svg?v=moon-record" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=moon-record">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/style.css?v=cover-backgrounds">
+  <link rel="stylesheet" href="../css/responsive.css?v=polish-2">
+  <link rel="stylesheet" href="../css/refinements.css?v=artist-avatar">
 </head>
 <body>
   <!-- Shared navigation: ordinary links work without scripting. -->
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
+    <input class="header-toggle visually-hidden" type="checkbox" id="header-toggle" aria-label="Keep navigation open">
+    <div class="header-panel">
     <div class="header-inner">
-      <a class="brand" href="../index.html"><span>OPM</span> Afterhours</a>
+      <a class="brand" href="../index.html" aria-label="OPM Afterhours home"><img class="brand-mark" src="../assets/logo-mark.svg" alt="" width="46" height="46"><span class="brand-wordmark"><span class="brand-kicker">OPM</span><span class="brand-name">Afterhours</span></span></a>
       <nav aria-label="Main navigation">
         <a href="../index.html">Home</a>
         <a class="nav-active" href="../index.html#artists">Artists</a>
@@ -22,54 +28,56 @@
         <a href="../index.html#about">About</a>
       </nav>
     </div>
+    </div>
+    <label class="header-tab" for="header-toggle"><span>Menu</span><i class="bi bi-chevron-down" aria-hidden="true"></i></label>
   </header>
   <main id="main" tabindex="-1" class="page-shell artist-page">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a class="back-link" href="../index.html#artists">← Artist directory</a><span aria-hidden="true">/</span><a class="current-artist" href="ben-and-ben.html" aria-current="page">Ben&amp;Ben</a></nav>
-    <!-- Artist identity and static listening-room composition. -->
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a class="back-link" href="../index.html#artists"><i class="bi bi-arrow-left" aria-hidden="true"></i> Artist directory</a><span aria-hidden="true">/</span><a class="current-artist" href="ben-and-ben.html" aria-current="page">Ben&amp;Ben</a></nav>
+    <!-- Artist identity and listening-room composition. -->
     <section class="artist-room" aria-labelledby="artist-title">
+      <input class="song-choice visually-hidden" type="radio" name="song-choice" id="song-choice-1" aria-label="Select Duyan" checked>
+      <input class="song-choice visually-hidden" type="radio" name="song-choice" id="song-choice-2" aria-label="Select Lifetime (Reimagined)">
+      <input class="song-choice visually-hidden" type="radio" name="song-choice" id="song-choice-3" aria-label="Select Autumn (Reimagined)">
+      <!-- Selected artwork also backs the video when motion is reduced. -->
+      <img class="song-background song-background-1" src="../assets/covers/ben-and-ben-duyan.jpg" alt="" aria-hidden="true">
+      <img class="song-background song-background-2" src="../assets/covers/ben-and-ben-lifetime-reimagined.jpg" alt="" aria-hidden="true">
+      <img class="song-background song-background-3" src="../assets/covers/ben-and-ben-autumn-reimagined.jpg" alt="" aria-hidden="true">
 
-      <div class="artist-copy"><p class="source-note">No. 04 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/">Billboard Philippines · first half of 2026</a></p><h1 id="artist-title">Ben&amp;Ben</h1><!-- Original biography summary; research references are in docs/content-sources.md. -->
-        <div class="biography"><p>Ben&amp;Ben is a nine-piece folk-pop band from Manila, led by twin singer-songwriters Paolo Benjamin and Miguel Benjamin Guico. Its ensemble includes acoustic and electric guitars, bass, violin, keyboards, drums, and percussion. Sony Music Philippines describes its sound as a meeting of folk, world, and indigenous musical styles with pop songwriting, supported by layered harmonies and a full-band approach to performance.</p><p>The debut studio album Limasawa Street arrived in 2019, followed by Pebble House, Vol. 1: Kuwaderno and The Traveller Across Dimensions. Songs such as Pagtingin and Araw-Araw remain part of its recorded identity. In 2026, Duyan continued a connected series of love songs, while new Reimagined editions revisited Lifetime and Autumn. These releases give listeners a way to follow how the band develops familiar stories and arrangements across different stages of its catalog.</p></div>
+      <div class="artist-copy"><p class="source-note">No. 04 · <a href="https://billboardphilippines.com/music/news/billboard-philippines-top-opm-artists-h1-2026/" target="_blank" rel="noopener noreferrer">Billboard Philippines · first half of 2026</a></p><div class="artist-identity"><img class="artist-avatar" src="../assets/artists/ben&amp;ben.jfif" alt="" width="56" height="56"><h1 id="artist-title">Ben&amp;Ben</h1></div><!-- Original biography summary; research references are in docs/content-sources.md. -->
+        <p class="bio-heading">About the artist <span>Scroll to read <i class="bi bi-arrow-down" aria-hidden="true"></i></span></p>
+        <div class="biography" tabindex="0" role="region" aria-label="Artist biography"><p>Ben&amp;Ben is a nine-piece folk-pop band from Manila, led by twin singer-songwriters Paolo Benjamin and Miguel Benjamin Guico. Its ensemble includes acoustic and electric guitars, bass, violin, keyboards, drums, and percussion. Sony Music Philippines describes its sound as a meeting of folk, world, and indigenous musical styles with pop songwriting, supported by layered harmonies and a full-band approach to performance.</p><p>The debut studio album Limasawa Street arrived in 2019, followed by Pebble House, Vol. 1: Kuwaderno and The Traveller Across Dimensions. Songs such as Pagtingin and Araw-Araw remain part of its recorded identity. In 2026, Duyan continued a connected series of love songs, while new Reimagined editions revisited Lifetime and Autumn. These releases give listeners a way to follow how the band develops familiar stories and arrangements across different stages of its catalog.</p></div>
         <ul class="genre-labels" aria-label="Artist genres"><li>OPM</li><li>Folk Pop</li></ul>
-        <div class="artist-portrait portrait-placeholder"><span class="portrait-number" aria-hidden="true">04</span><span>Ben&amp;Ben</span><span class="small-note">Portrait awaiting an authorized image</span></div>
-        <p class="small-note">Three featured slots · project selections</p>
+        <fieldset class="song-picker"><legend>Choose your next listen</legend><div class="song-vinyls"><label class="song-option" for="song-choice-1"><span class="mini-vinyl"><span class="mini-label"><img src="../assets/covers/ben-and-ben-duyan.jpg" alt=""></span></span><span>Duyan</span></label><label class="song-option" for="song-choice-2"><span class="mini-vinyl"><span class="mini-label"><img src="../assets/covers/ben-and-ben-lifetime-reimagined.jpg" alt=""></span></span><span>Lifetime (Reimagined)</span></label><label class="song-option" for="song-choice-3"><span class="mini-vinyl"><span class="mini-label"><img src="../assets/covers/ben-and-ben-autumn-reimagined.jpg" alt=""></span></span><span>Autumn (Reimagined)</span></label></div></fieldset>
+        <p class="small-note">Three tracks. A little closer to the artist.</p>
       </div>
-      <div class="record-region"><div class="vinyl" role="img" aria-label="Static decorative vinyl record"><div class="vinyl-label"><span>OPM<br>Afterhours</span></div></div><p class="small-note">Static vinyl illustration · decorative only</p></div>
+      <div class="record-region"><p class="turntable-heading"><span class="status-dot" aria-hidden="true"></span> On the turntable</p><div class="selected-record selected-record-1"><div class="vinyl" role="img" aria-label="Duyan record"><div class="vinyl-label"><img src="../assets/covers/ben-and-ben-duyan.jpg" alt="Cover artwork for Duyan by Ben&amp;Ben"></div></div><p class="selected-song-title">Duyan</p></div><div class="selected-record selected-record-2"><div class="vinyl" role="img" aria-label="Lifetime (Reimagined) record"><div class="vinyl-label"><img src="../assets/covers/ben-and-ben-lifetime-reimagined.jpg" alt="Cover artwork for Lifetime (Reimagined) by Ben&amp;Ben"></div></div><p class="selected-song-title">Lifetime (Reimagined)</p></div><div class="selected-record selected-record-3"><div class="vinyl" role="img" aria-label="Autumn (Reimagined) record"><div class="vinyl-label"><img src="../assets/covers/ben-and-ben-autumn-reimagined.jpg" alt="Cover artwork for Autumn (Reimagined) by Ben&amp;Ben"></div></div><p class="selected-song-title">Autumn (Reimagined)</p></div></div>
     </section>
     <!-- Every supplied recording uses native audio. Missing media has no player. -->
-    <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Playback ends when you navigate to another page.</p></div>
+    <section class="tracks-section" aria-labelledby="tracks-title"><div class="section-heading"><div><p class="eyebrow">A closer listen</p><h2 id="tracks-title">Featured tracks.</h2></div><p class="small-note">Listen on your favorite platform.</p></div>
       <ol class="track-grid">
         <li><article class="track-card">
-          <div class="artwork-placeholder"><span class="artwork-artist">Ben&amp;Ben</span><span class="artwork-title">Duyan</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 01</p><h3>Duyan</h3><p class="track-credit">Ben&amp;Ben</p>
-          <p class="availability">Local audio not supplied</p>
+          <img class="track-artwork" src="../assets/covers/ben-and-ben-duyan.jpg" alt="Cover artwork for Duyan by Ben&amp;Ben" loading="lazy"><p class="eyebrow">Track 01</p><h3>Duyan</h3><p class="track-credit">Ben&amp;Ben</p>
           <!-- Regular platform links work without scripts or embedded players. -->
-          <div class="listening-links"><a href="https://open.spotify.com/track/4YyVQYnnzEO3y7hHNSn6sg" target="_blank" rel="noopener noreferrer" aria-label="Listen to Duyan by Ben&amp;Ben on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=ZFcWYt6-CyE" target="_blank" rel="noopener noreferrer" aria-label="Watch Duyan by Ben&amp;Ben on YouTube — music video (opens in a new tab)">Watch on YouTube <span class="link-format">music video</span></a></div>
+          <div class="listening-links"><a href="https://open.spotify.com/track/4YyVQYnnzEO3y7hHNSn6sg" target="_blank" rel="noopener noreferrer" aria-label="Listen to Duyan by Ben&amp;Ben on Spotify (opens in a new tab)"><i class="bi bi-spotify" aria-hidden="true"></i> Listen on Spotify</a><a href="https://music.apple.com/ph/album/duyan/1865631410?i=1865631411&amp;uo=4" target="_blank" rel="noopener noreferrer" aria-label="Listen to Duyan on Apple Music (opens in a new tab)"><i class="bi bi-apple" aria-hidden="true"></i> Listen on Apple Music</a><a href="https://www.youtube.com/watch?v=ZFcWYt6-CyE" target="_blank" rel="noopener noreferrer" aria-label="Watch Duyan by Ben&amp;Ben on YouTube — music video (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <span class="link-format">music video</span></a></div>
           <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Duyan information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Ben&amp;Ben</dd></div><div><dt>Release</dt><dd>January 22, 2026</dd></div><div><dt>Release type</dt><dd>Single</dd></div><div><dt>Songwriter</dt><dd>Miguel Benjamin Guico</dd></div><div><dt>Producer</dt><dd>Ziv</dd></div></dl><p class="song-description">Duyan continues a connected series of Ben&amp;Ben love songs that began with Pagtingin and Araw-Araw. Its official video reunites Gabbi Garcia and Khalil Ramos as the characters from those earlier videos, carrying their shared story into another stage of commitment.</p><p class="content-reference"><a href="https://billboardphilippines.com/music/news/ben-and-ben-duyan-new-single-release-2026/" target="_blank" rel="noopener noreferrer">Source for Duyan information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder"><span class="artwork-artist">Ben&amp;Ben</span><span class="artwork-title">Lifetime (Reimagined)</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 02</p><h3>Lifetime (Reimagined)</h3><p class="track-credit">Ben&amp;Ben</p>
-          <p class="availability">Local audio not supplied</p>
+          <img class="track-artwork" src="../assets/covers/ben-and-ben-lifetime-reimagined.jpg" alt="Cover artwork for Lifetime (Reimagined) by Ben&amp;Ben" loading="lazy"><p class="eyebrow">Track 02</p><h3>Lifetime (Reimagined)</h3><p class="track-credit">Ben&amp;Ben</p>
           <!-- Regular platform links work without scripts or embedded players. -->
-          <div class="listening-links"><a href="https://open.spotify.com/track/2c5JKO8gPaOFVxQ0elwXEG" target="_blank" rel="noopener noreferrer" aria-label="Listen to Lifetime (Reimagined) by Ben&amp;Ben on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=Vd4E1wBRhdA" target="_blank" rel="noopener noreferrer" aria-label="Watch Lifetime (Reimagined) by Ben&amp;Ben on YouTube — official video (opens in a new tab)">Watch on YouTube <span class="link-format">official video</span></a></div>
+          <div class="listening-links"><a href="https://open.spotify.com/track/2c5JKO8gPaOFVxQ0elwXEG" target="_blank" rel="noopener noreferrer" aria-label="Listen to Lifetime (Reimagined) by Ben&amp;Ben on Spotify (opens in a new tab)"><i class="bi bi-spotify" aria-hidden="true"></i> Listen on Spotify</a><a href="https://music.apple.com/ph/album/lifetime-reimagined/1887316728?i=1887316735&amp;uo=4" target="_blank" rel="noopener noreferrer" aria-label="Listen to Lifetime (Reimagined) on Apple Music (opens in a new tab)"><i class="bi bi-apple" aria-hidden="true"></i> Listen on Apple Music</a><a href="https://www.youtube.com/watch?v=Vd4E1wBRhdA" target="_blank" rel="noopener noreferrer" aria-label="Watch Lifetime (Reimagined) by Ben&amp;Ben on YouTube — official video (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <span class="link-format">official video</span></a></div>
           <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Lifetime (Reimagined) information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Ben&amp;Ben</dd></div><div><dt>Release</dt><dd>March 31, 2026</dd></div><div><dt>Release type</dt><dd>Reimagined single; original released in 2020</dd></div><div><dt>Songwriters</dt><dd>Miguel Benjamin; Paolo Benjamin</dd></div><div><dt>Producers</dt><dd>Jean Paul Verona; Paolo Benjamin</dd></div></dl><p class="song-description">This edition revisits Ben&amp;Ben’s 2020 song Lifetime with a longer arrangement. The band’s announcement describes grieving a relationship that never happened. The selection here is the 2026 Reimagined recording, preserving its identity separately from the shorter original version.</p><p class="content-reference"><a href="https://www.gmanetwork.com/news/lifestyle/content/981817/ben-ben-to-release-reimagined-version-of-039-lifetime-039/story/" target="_blank" rel="noopener noreferrer">Source for Lifetime (Reimagined) information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
         <li><article class="track-card">
-          <div class="artwork-placeholder"><span class="artwork-artist">Ben&amp;Ben</span><span class="artwork-title">Autumn (Reimagined)</span><span class="small-note">Cover awaiting an authorized image</span></div><p class="eyebrow">Featured slot 03</p><h3>Autumn (Reimagined)</h3><p class="track-credit">Ben&amp;Ben</p>
-          <p class="availability">Local audio not supplied</p>
+          <img class="track-artwork" src="../assets/covers/ben-and-ben-autumn-reimagined.jpg" alt="Cover artwork for Autumn (Reimagined) by Ben&amp;Ben" loading="lazy"><p class="eyebrow">Track 03</p><h3>Autumn (Reimagined)</h3><p class="track-credit">Ben&amp;Ben</p>
           <!-- Regular platform links work without scripts or embedded players. -->
-          <div class="listening-links"><a href="https://open.spotify.com/track/2NP0WCHeIjBi3oC7MruePl" target="_blank" rel="noopener noreferrer" aria-label="Listen to Autumn (Reimagined) by Ben&amp;Ben on Spotify (opens in a new tab)">Listen on Spotify</a><a href="https://www.youtube.com/watch?v=tQmJJJy9dw8" target="_blank" rel="noopener noreferrer" aria-label="Watch Autumn (Reimagined) by Ben&amp;Ben on YouTube — official audio (opens in a new tab)">Watch on YouTube <span class="link-format">official audio</span></a></div>
+          <div class="listening-links"><a href="https://open.spotify.com/track/2NP0WCHeIjBi3oC7MruePl" target="_blank" rel="noopener noreferrer" aria-label="Listen to Autumn (Reimagined) by Ben&amp;Ben on Spotify (opens in a new tab)"><i class="bi bi-spotify" aria-hidden="true"></i> Listen on Spotify</a><a href="https://music.apple.com/ph/album/autumn-reimagined/1895804413?i=6764490939&amp;uo=4" target="_blank" rel="noopener noreferrer" aria-label="Listen to Autumn (Reimagined) on Apple Music (opens in a new tab)"><i class="bi bi-apple" aria-hidden="true"></i> Listen on Apple Music</a><a href="https://www.youtube.com/watch?v=tQmJJJy9dw8" target="_blank" rel="noopener noreferrer" aria-label="Watch Autumn (Reimagined) by Ben&amp;Ben on YouTube — official audio (opens in a new tab)"><i class="bi bi-youtube" aria-hidden="true"></i> Watch on YouTube <span class="link-format">official audio</span></a></div>
           <details class="song-information"><summary>Song information</summary><div class="information-scroll" tabindex="0" role="region" aria-label="Autumn (Reimagined) information"><dl class="track-metadata"><div><dt>Performer</dt><dd>Ben&amp;Ben</dd></div><div><dt>Release</dt><dd>May 7, 2026</dd></div><div><dt>Release type</dt><dd>Reimagined release</dd></div><div><dt>Songwriters</dt><dd>Miguel Benjamin G. Guico; Paolo Benjamin G. Guico</dd></div><div><dt>Producers</dt><dd>Paolo Benjamin G. Guico; Jean Paul Verona</dd></div></dl><p class="song-description">Autumn returns in a Reimagined recording credited to Ben&amp;Ben and released through Sony Music Entertainment Philippines. This 2026 edition is distinct from the earlier Autumn recording and the version featuring Belle Mariano. The official audio link points to the selected Reimagined edition.</p><p class="content-reference"><a href="https://www.youtube.com/watch?v=tQmJJJy9dw8" target="_blank" rel="noopener noreferrer">Source for Autumn (Reimagined) information <span class="visually-hidden">(opens in a new tab)</span></a></p></div></details>
         </article></li>
       </ol>
     </section>
-    <!-- Adjacent pages wrap around the ten-artist catalog. These remain visible on mobile. -->
-    <nav class="adjacent-navigation" aria-label="Adjacent artists">
-      <a class="adjacent-link" href="fitterkarma.html"><span class="eyebrow">Previous artist</span><span>← fitterkarma</span></a>
-      <a class="adjacent-link" href="skusta-clee.html"><span class="eyebrow">Next artist</span><span>Skusta Clee →</span></a>
-    </nav>
-    <nav class="floating-navigation" aria-label="Desktop artist navigation">
-      <a class="artist-arrow previous" href="fitterkarma.html" aria-label="Previous artist: fitterkarma">←</a>
-      <a class="artist-arrow next" href="skusta-clee.html" aria-label="Next artist: Skusta Clee">→</a>
+    <nav class="floating-navigation" aria-label="Artist navigation">
+      <a class="artist-arrow previous" href="fitterkarma.html" aria-label="Previous artist: fitterkarma">←<span class="arrow-tooltip">Previous artist: fitterkarma</span></a>
+      <a class="artist-arrow next" href="skusta-clee.html" aria-label="Next artist: Skusta Clee">→<span class="arrow-tooltip">Next artist: Skusta Clee</span></a>
     </nav>
   </main>
   <footer class="site-footer"><p>OPM Afterhours · Filipino music, after dark.</p><a href="../index.html#artists">Explore the artist directory</a></footer>

@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>OPM Afterhours vinyl</title><rect width="64" height="64" rx="12" fill="#111012"/><circle cx="32" cy="32" r="25" fill="#181619" stroke="#cc98a7" stroke-width="2"/><circle cx="32" cy="32" r="19" fill="none" stroke="#383036" stroke-width="2"/><circle cx="32" cy="32" r="11" fill="#cc98a7"/><circle cx="32" cy="32" r="3" fill="#111012"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>OPM Afterhours</title>
+  <rect width="64" height="64" rx="14" fill="#211a23"/>
+  <path d="M40 12A23 23 0 1 0 51 45A23 23 0 0 1 40 12Z" fill="#e2afba"/>
+  <circle cx="31" cy="34" r="6" stroke="#e2afba" stroke-width="3"/>
+  <path d="m50 8 2.7 7.3L60 18l-7.3 2.7L50 28l-2.7-7.3L40 18l7.3-2.7Z" fill="#f5eee9"/>
+</svg>
