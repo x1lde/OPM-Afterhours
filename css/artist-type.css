@@ -1,0 +1,101 @@
+/* Artist signatures use system fonts; no font downloads or scripts required. */
+[data-artist="cup-of-joe"] {
+  --artist-font: Georgia, "Times New Roman", serif;
+  --artist-weight: 400;
+  --artist-tracking: -.055em;
+  --artist-ink: #f0d3bc;
+}
+[data-artist="arthur-nery"] {
+  --artist-font: Georgia, "Times New Roman", serif;
+  --artist-weight: 400;
+  --artist-style: italic;
+  --artist-tracking: -.045em;
+  --artist-ink: #e0dbe9;
+}
+[data-artist="fitterkarma"] {
+  --artist-font: "Courier New", Courier, monospace;
+  --artist-weight: 700;
+  --artist-tracking: -.075em;
+  --artist-case: lowercase;
+  --artist-ink: #dfd9b8;
+  --artist-mobile-size: clamp(1.7rem, 8vw, 2.8rem);
+}
+[data-artist="ben-and-ben"] {
+  --artist-font: "Palatino Linotype", Palatino, Georgia, serif;
+  --artist-weight: 400;
+  --artist-tracking: -.065em;
+  --artist-ink: #e6d6ad;
+}
+[data-artist="bini"] {
+  --artist-font: "Trebuchet MS", Arial, sans-serif;
+  --artist-weight: 800;
+  --artist-tracking: .12em;
+  --artist-case: uppercase;
+  --artist-ink: #f6c4df;
+}
+[data-artist="december-avenue"] {
+  --artist-font: "Arial Narrow", "Segoe UI", Arial, sans-serif;
+  --artist-weight: 300;
+  --artist-tracking: .09em;
+  --artist-case: uppercase;
+  --artist-ink: #d3dce9;
+  --artist-size: clamp(1.8rem, 3.1vw, 2.8rem);
+  --artist-mobile-size: clamp(1.65rem, 7.5vw, 2.4rem);
+}
+[data-artist="iv-of-spades"] {
+  --artist-font: Georgia, "Times New Roman", serif;
+  --artist-weight: 700;
+  --artist-style: italic;
+  --artist-tracking: -.035em;
+  --artist-case: uppercase;
+  --artist-ink: #edcd8e;
+  --artist-size: clamp(2.2rem, 3.6vw, 3.25rem);
+  --artist-mobile-size: clamp(1.95rem, 8vw, 2.8rem);
+}
+[data-artist="rob-deniel"] {
+  --artist-font: Cambria, Georgia, serif;
+  --artist-weight: 700;
+  --artist-tracking: -.045em;
+  --artist-ink: #efc7b5;
+  --artist-shadow: 1px 2px 0 #754848;
+}
+[data-artist="sb19"] {
+  --artist-font: Bahnschrift, "Arial Black", Arial, sans-serif;
+  --artist-weight: 700;
+  --artist-tracking: .08em;
+  --artist-case: uppercase;
+  --artist-ink: #c8e2ed;
+}
+[data-artist="skusta-clee"] {
+  --artist-font: Impact, "Arial Narrow", Arial, sans-serif;
+  --artist-weight: 400;
+  --artist-tracking: .015em;
+  --artist-case: uppercase;
+  --artist-ink: #eddfc8;
+}
+.artist-identity h1,
+.gallery-slide[data-artist] h3 {
+  font-family: var(--artist-font, var(--serif));
+  font-weight: var(--artist-weight, 400);
+  font-style: var(--artist-style, normal);
+  letter-spacing: var(--artist-tracking, 0);
+  text-transform: var(--artist-case, none);
+  color: var(--artist-ink, var(--text));
+  text-shadow: var(--artist-shadow, none);
+  line-height: 1.15;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+.artist-identity h1 { font-size: var(--artist-size, clamp(2.6rem, 4vw, 3.7rem)); }
+[data-artist] .selected-song-title,
+[data-artist] .track-card h3 {
+  font-family: var(--artist-font, var(--serif));
+  font-weight: var(--artist-weight, 400);
+  font-style: var(--artist-style, normal);
+  letter-spacing: -.025em;
+}
+.artist-avatar { border-color: var(--artist-ink, var(--accent)); }
+.gallery-slide[data-artist="december-avenue"] h3 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+@media (max-width: 700px) {
+  .artist-identity h1 { font-size: var(--artist-mobile-size, clamp(2.1rem, 9vw, 3.2rem)); }
+}

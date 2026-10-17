@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css?v=vinyl-spin">
   <link rel="stylesheet" href="css/responsive.css?v=polish-2">
-  <link rel="stylesheet" href="css/refinements.css?v=brand-3">
+  <link rel="stylesheet" href="css/refinements.css?v=nav-selection">
+  <link rel="stylesheet" href="css/artist-type.css?v=2">
 </head>
-<body>
+<body data-page="home">
   <!-- Shared navigation: ordinary links work without scripting. -->
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
@@ -22,10 +23,10 @@
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="OPM Afterhours home"><img class="brand-mark" src="assets/logo-mark.svg" alt="" width="46" height="46"><span class="brand-wordmark"><span class="brand-kicker">OPM</span><span class="brand-name">Afterhours</span></span></a>
       <nav aria-label="Main navigation">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="index.html#artists">Artists</a>
-        <a href="index.html#genres">Genres</a>
-        <a href="index.html#about">About</a>
+        <a href="index.html" aria-current="page"><i class="bi bi-house nav-icon" aria-hidden="true"></i><span>Home</span></a>
+        <a href="index.html#artists"><i class="bi bi-vinyl nav-icon" aria-hidden="true"></i><span>Artists</span></a>
+        <a href="index.html#genres"><i class="bi bi-music-note-list nav-icon" aria-hidden="true"></i><span>Genres</span></a>
+        <a href="index.html#about"><i class="bi bi-info-circle nav-icon" aria-hidden="true"></i><span>About</span></a>
       </nav>
     </div>
     </div>
@@ -55,52 +56,52 @@
         <input class="gallery-choice visually-hidden" type="radio" name="featured-artist" id="artist-choice-9" aria-label="Feature BINI">
         <input class="gallery-choice visually-hidden" type="radio" name="featured-artist" id="artist-choice-10" aria-label="Feature Rob Deniel">
         <ol class="gallery-stage">
-          <li class="gallery-slide"><a class="artist-card" href="artists/cup-of-joe.html">
+          <li class="gallery-slide" data-artist="cup-of-joe"><a class="artist-card" href="artists/cup-of-joe.html">
         <img class="artist-image" src="assets/artists/cup_of_joe.jfif" alt="Cup of Joe" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 01</span><h3>Cup of Joe</h3></div>
         <p>OPM · Pop Alternative</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-10" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-2" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/arthur-nery.html">
+          <li class="gallery-slide" data-artist="arthur-nery"><a class="artist-card" href="artists/arthur-nery.html">
         <img class="artist-image" src="assets/artists/arthur_nery.jfif" alt="Arthur Nery" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 02</span><h3>Arthur Nery</h3></div>
         <p>OPM</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-1" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-3" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/fitterkarma.html">
+          <li class="gallery-slide" data-artist="fitterkarma"><a class="artist-card" href="artists/fitterkarma.html">
         <img class="artist-image" src="assets/artists/fitterkarma.jfif" alt="fitterkarma" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 03</span><h3>fitterkarma</h3></div>
         <p>OPM · Art Rock</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-2" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-4" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/ben-and-ben.html">
+          <li class="gallery-slide" data-artist="ben-and-ben"><a class="artist-card" href="artists/ben-and-ben.html">
         <img class="artist-image" src="assets/artists/ben&amp;ben.jfif" alt="Ben&amp;Ben" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 04</span><h3>Ben&amp;Ben</h3></div>
         <p>OPM · Folk Pop</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-3" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-5" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/skusta-clee.html">
+          <li class="gallery-slide" data-artist="skusta-clee"><a class="artist-card" href="artists/skusta-clee.html">
         <img class="artist-image" src="assets/artists/skusta_clee.jfif" alt="Skusta Clee" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 05</span><h3>Skusta Clee</h3></div>
         <p>OPM · Hip-Hop</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-4" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-6" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/sb19.html">
+          <li class="gallery-slide" data-artist="sb19"><a class="artist-card" href="artists/sb19.html">
         <img class="artist-image" src="assets/artists/sb19.jfif" alt="SB19" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 06</span><h3>SB19</h3></div>
         <p>OPM · P-Pop</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-5" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-7" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/iv-of-spades.html">
+          <li class="gallery-slide" data-artist="iv-of-spades"><a class="artist-card" href="artists/iv-of-spades.html">
         <img class="artist-image" src="assets/artists/iv_of_spades.jfif" alt="IV OF SPADES" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 07</span><h3>IV OF SPADES</h3></div>
         <p>OPM · Indie Alternative</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-6" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-8" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/december-avenue.html">
+          <li class="gallery-slide" data-artist="december-avenue"><a class="artist-card" href="artists/december-avenue.html">
         <img class="artist-image" src="assets/artists/december_avenue.jfif" alt="December Avenue" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 08</span><h3>December Avenue</h3></div>
         <p>OPM · Rock</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-7" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-9" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/bini.html">
+          <li class="gallery-slide" data-artist="bini"><a class="artist-card" href="artists/bini.html">
         <img class="artist-image" src="assets/artists/bini.jfif" alt="BINI" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 09</span><h3>BINI</h3></div>
         <p>OPM · P-Pop</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
       </a><div class="gallery-arrows"><label for="artist-choice-8" title="Previous artist"><i class="bi bi-arrow-left" aria-hidden="true"></i><span class="visually-hidden">Previous artist</span></label><label for="artist-choice-10" title="Next artist"><i class="bi bi-arrow-right" aria-hidden="true"></i><span class="visually-hidden">Next artist</span></label></div></li>
-          <li class="gallery-slide"><a class="artist-card" href="artists/rob-deniel.html">
+          <li class="gallery-slide" data-artist="rob-deniel"><a class="artist-card" href="artists/rob-deniel.html">
         <img class="artist-image" src="assets/artists/rob_deniel.jfif" alt="Rob Deniel" loading="lazy">
         <div class="card-heading"><span class="eyebrow">No. 10</span><h3>Rob Deniel</h3></div>
         <p>OPM · Pop</p><span class="card-link">Explore artist <i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
