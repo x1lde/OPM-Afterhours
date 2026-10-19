@@ -29,3 +29,11 @@ Six tracks use artwork backgrounds. Four are intentionally without MVs (Autumn, 
 DUNGKA is stored in Git LFS. Fresh checkouts must run `git lfs pull` before packaging, or use a host checkout that retrieves LFS assets. The validator blocks deployment packaging when only a pointer is present.
 
 Packaging does not publish the site. No commit or push is part of this UI refresh.
+
+## Header section highlight follow-up
+
+The original highlight followed only the URL fragment. CSS view timelines now track the visible homepage section in supported browsers, with clicked-anchor highlighting as a fallback. Desktop forward/backward scrolling and mobile reduced-motion behavior were checked in Chromium. The changed stylesheet and cache-versioned HTML pages were copied into `dist/`.
+
+## Subsequent motion update ? untested
+
+Added same-document homepage anchors, scroll-entry reveals, disclosure and record entrances, and hover refinements. Source and dist were updated. Browser testing and validation were explicitly skipped at the owner's request; the earlier results above predate these motion changes.

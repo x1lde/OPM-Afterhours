@@ -38,7 +38,7 @@ Every page starts with a `head`: UTF-8 encoding, viewport, theme color, a unique
 3. `responsive.css`: tablet/mobile and accessibility overrides.
 4. `artist-type.css`: artist-specific typography.
 
-The body has a skip link, Still mode checkbox, header, main content, and footer. The skip link lets keyboard users go directly to `main`. The shared header uses normal links. Desktop navigation stays visible at the top; phones get a fixed bottom navigation bar and enough page padding to keep content accessible above it.
+The body has a skip link, Still mode checkbox, header, main content, and footer. The skip link lets keyboard users go directly to `main`. The shared header uses normal links. Supported browsers highlight the section crossing a line one quarter down the viewport using CSS view timelines and `timeline-scope`. This tracks manual scrolling in both directions, including reduced-motion mode; the indicator changes state without moving. Browsers without these CSS features fall back to highlighting the clicked URL anchor. No JavaScript is used. Desktop navigation stays visible at the top; phones get a fixed bottom navigation bar and enough page padding to keep content accessible above it.
 
 The markup is repeated in eleven files because there is no template engine. If changing the shared header or footer, make the equivalent edit in `index.html` and all ten artist files. Homepage asset paths start with `assets/`; artist-page paths start with `../assets/` because those files are one folder deeper.
 
@@ -187,3 +187,7 @@ DUNGKA's MP4 is managed by Git LFS. Run `git lfs pull` before packaging on a fre
 Design reference review: [LNWY's Awwwards entry](https://www.awwwards.com/sites/lnwy) informed the focus on artists and music; [Perpetuum.inc's Awwwards entry](https://www.awwwards.com/sites/perpetuum-inc) provided a reference for gradients and restrained motion; [Awwwards' design collection](https://assets.awwwards.com/awards/gallery/2023/07/HOT-RIGHT-NOW-BOOK-2023.pdf) provided typography and dark-interface examples. These are visual references, not copied templates or source code. Glass surfaces, the vinyl composition, and the preserved charcoal/rose palette are adapted to this project.
 
 [Bootstrap Icons](https://icons.getbootstrap.com/) supplies the locally hosted icons under its included MIT license. Google Fonts supplies the existing typefaces, each with system fallbacks. No new raster artwork was required.
+
+### Motion refinements
+
+Homepage section links use same-document fragments so native smooth scrolling does not reload the homepage. CSS view timelines reveal cards and section headings as they enter the viewport in supported browsers. Artist rooms, selected records, and opened disclosures have short entrance animations; hover-capable devices also get image zoom and card lift. Still mode and reduced-motion preferences disable decorative animations. This update was not tested, at the owner's request.

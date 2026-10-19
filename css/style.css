@@ -58,8 +58,38 @@ section[id] { scroll-margin-top: 1rem; }
 .site-header nav a:hover { color: var(--text); background: #ffffff07; }
 .site-header nav a[aria-current], .site-header nav .nav-active { color: var(--accent); background: #e2afba13; }
 .site-header .nav-icon { font-size: .95rem; }
-body[data-page="home"]:has(main > section:target) .site-header nav a[aria-current] { color: var(--muted); background: transparent; }
-body:has(#artists:target) .site-header nav a[href$="#artists"], body:has(#genres:target) .site-header nav a[href$="#genres"], body:has(#about:target) .site-header nav a[href$="#about"] { color: var(--accent); background: #e2afba13; }
+/* Older browsers follow the clicked anchor; supported browsers track scrolling. */
+@supports not ((animation-timeline: --artists) and (timeline-scope: --artists)) {
+  body[data-page="home"]:has(main > section:target) .site-header nav a[aria-current] { color: var(--muted); background: transparent; }
+  body:has(#artists:target) .site-header nav a[href$="#artists"], body:has(#genres:target) .site-header nav a[href$="#genres"], body:has(#about:target) .site-header nav a[href$="#about"] { color: var(--accent); background: #e2afba13; }
+}
+@supports (animation-timeline: --artists) and (timeline-scope: --artists) {
+  body[data-page="home"] { timeline-scope: --artists, --genres, --about; }
+  /* A section is current when it crosses a line one quarter down the viewport. */
+  body[data-page="home"] :is(#artists, #genres, #about) { view-timeline-axis: block; view-timeline-inset: 25% 75%; }
+  #artists { view-timeline-name: --artists; }
+  #genres { view-timeline-name: --genres; }
+  #about { view-timeline-name: --about; }
+  body[data-page="home"] .site-header nav a {
+    /* These constant-value animations indicate location, even in reduced-motion mode. */
+    animation: nav-section-current 1ms linear 1 normal none !important;
+    transition: none;
+  }
+  body[data-page="home"] .site-header nav a[href$="#artists"] { animation-timeline: --artists !important; }
+  body[data-page="home"] .site-header nav a[href$="#genres"] { animation-timeline: --genres !important; }
+  body[data-page="home"] .site-header nav a[href$="#about"] { animation-timeline: --about !important; animation-fill-mode: forwards !important; }
+  body[data-page="home"] .site-header nav a[aria-current="page"] {
+    animation-name: nav-home-away !important;
+    animation-timeline: --artists !important;
+    animation-fill-mode: forwards !important;
+  }
+  @keyframes nav-section-current {
+    from, to { color: var(--accent); background-color: #e2afba13; }
+  }
+  @keyframes nav-home-away {
+    from, to { color: var(--muted); background-color: transparent; }
+  }
+}
 .motion-label { display: inline-flex; min-height: 44px; align-items: center; gap: .6rem; font-size: .7rem; color: var(--muted); cursor: pointer; white-space: nowrap; }
 .switch-track { width: 28px; height: 16px; padding: 3px; border-radius: 20px; background: #ffffff18; }
 .switch-track::after { content: ""; display: block; width: 10px; height: 10px; border-radius: 50%; background: var(--muted); transition: transform .2s; }
@@ -263,6 +293,46 @@ audio { display: block; width: 100%; max-width: 100%; min-width: 0; }
 @keyframes vinyl-spin { to { transform: rotate(360deg); } }
 @keyframes equalize { to { transform: scaleY(.4); } }
 @keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+/* Section links use native smooth scrolling; nested reading panels do too. */
+.biography, .information-scroll { scroll-behavior: smooth; }
+html:has(#still-mode:checked) { scroll-behavior: auto; }
+
+/* Soft entrances for artist rooms, selected records, and opened information. */
+.artist-room { animation: enter .7s var(--ease) both; }
+.selected-record { animation: content-in .45s var(--ease) both; }
+.song-information[open] .information-scroll,
+.guide-questions details[open] > p { animation: content-in .3s ease-out both; }
+@keyframes content-in {
+  from { opacity: 0; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Cards reveal as they enter the viewport. Unsupported browsers show them normally. */
+@supports (animation-timeline: view()) {
+  .section-heading, .artist-tile, .genre-group, .about-intro,
+  .story-card, .inspiration, .team-card, .track-grid > li, .about-outro {
+    animation: scroll-reveal 1s linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+  @keyframes scroll-reveal {
+    from { opacity: .25; translate: 0 24px; }
+    to { opacity: 1; translate: 0 0; }
+  }
+  /* Keyboard navigation always reveals the entire focused card immediately. */
+  .artist-tile:focus-within, .genre-group:focus-within,
+  .inspiration:focus-within, .track-grid > li:focus-within { animation: none; }
+}
+
+/* Small responses to pointer interaction without moving mobile tap targets. */
+.story-card, .team-card, .track-card { transition: border-color .3s ease, box-shadow .3s ease, transform .35s var(--ease); }
+.artist-image { transition: filter .4s ease, scale .6s var(--ease); }
+.button .bi, .quiet-link .bi, .back-top .bi { transition: transform .3s var(--ease); }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body:not(:has(#still-mode:checked)) .artist-card:hover .artist-image { scale: 1.025; }
+  body:not(:has(#still-mode:checked)) :is(.story-card, .track-card):hover { transform: translateY(-4px); border-color: #e2afba55; box-shadow: 0 14px 36px #0004; }
+  body:not(:has(#still-mode:checked)) :is(.button, .quiet-link, .back-top):hover .bi { transform: translate(2px, -2px); }
+}
 /* CSS hides videos visually; it cannot pause a native video's decoder. */
 .motion-toggle:checked ~ main *, .motion-toggle:checked ~ main *::before, .motion-toggle:checked ~ main *::after { animation: none !important; transition: none !important; }
 .motion-toggle:checked ~ main .background-video { display: none !important; }
