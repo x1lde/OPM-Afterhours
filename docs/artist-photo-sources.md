@@ -1,16 +1,9 @@
 # Artist profile photos
 
-The homepage artist cards and artist page avatars use local profile photos in
-`assets/artists/*-profile.jpg` downloaded from Deezer artist profiles, with
-Spotify portraits for BINI and Rob Deniel. Each downloaded photo was visually
-reviewed before use.
+The homepage cards and artist-page avatars use ten local portraits. Nine use the `*-profile.jpg` files; Arthur Nery uses the owner-selected `arthur_nery.jfif`.
 
-Exact artist pages, metadata endpoints, image URLs, and retrieval timestamps are
-recorded in [profile-sources.json](../assets/artists/profile-sources.json).
-The original supplied `.jfif` files are retained. Arthur Nery's homepage card and
-profile avatar use the original `arthur_nery.jfif` at the user's preference;
-the downloaded Deezer portrait is unused.
+The original portrait research used Deezer artist profiles, with Spotify portraits for BINI and Rob Deniel. Exact artist pages, metadata endpoints, image URLs, and retrieval timestamps remain in [profile-sources.json](../assets/artists/profile-sources.json).
 
-To refresh the downloads, run `python scripts/fetch-artist-photos.py` with network
-access, then review the photos before publishing. Profile images can change on
-the source services. Source attribution does not grant an image license.
+Unused alternate portraits and duplicate source images were removed during production cleanup. The manifest remains a historical provenance record, so it includes some downloaded alternatives that are no longer deployed. Source attribution does not itself grant an image license.
+
+To change a portrait, replace its file and update both the homepage card and artist-page avatar. See the [codebase guide](html-css-explanation.md) for paths and validation. The old one-time download script was removed after the supplied assets were integrated.

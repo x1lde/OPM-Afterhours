@@ -1,44 +1,31 @@
-# Migration verification — October 13, 2026
+# Release verification
 
-Historical report for the original migration. Milestone 11 subsequently adds researched content, external listening anchors, and one original static SVG favicon (explicitly permitted for this milestone). See [current verification](milestone-11-verification.md) for current counts and checks.
+Reviewed October 20, 2026 (Asia/Manila), using a local Python static server and desktop Chromium with responsive viewport emulation.
 
-## Environment and method
+## Completed
 
-The installed VS Code Live Server 5.7.10 engine served the separate folder on localhost port 5501. Its `useBrowserExtension` option was enabled, without a browser extension, to prevent development reload-script injection. Playwright controlled an actual Chromium browser using contexts with `javaScriptEnabled: false`. Testing code and screenshots were kept outside the submission. Browser evaluation was used only to inspect layout and media state; no script was added to the website and no playback was initiated through scripting.
+- All 11 pages checked at 1440, 768, 390, and 320px viewport widths: no horizontal document overflow and one h1 per page.
+- Homepage, About/team section, and SB19 listening room visually inspected; the mobile headline spacing, decorative sleeve bounds, and glow overflow were corrected during review.
+- All 10 artist cards directly accessible as ordinary links. Header anchors and the About active state work.
+- All 30 MP3s and 24 MP4s returned readable media metadata in Chromium. Two deferred MP3s were retried with explicit loading and passed. DUNGKA's actual 158 MB video was restored from Git LFS and decoded successfully.
+- Song selection by pointer and arrow keys, native song-information disclosure, and Still mode checked in a separate browser context with JavaScript disabled.
+- Still mode hides decorative video and stops CSS animation. The operating system reduced-motion setting was separately emulated and passed.
+- Local Bootstrap icon font loaded successfully. All eight team names verified against the supplied spelling and roles.
+- `python scripts/validate-site.py` passed: local files/fragments, case-sensitive paths, labels, unique IDs, one h1 per page, image alt attributes, three audio players per artist, safe new-tab links, CSS font references, and real media rather than Git LFS pointers.
+- Unused duplicate portraits/favicon exports, obsolete CSS overrides, one-time download/migration scripts, outdated milestone/checklist reports, and browser-preview artifacts removed. Research and provenance records retained.
 
-## Performed browser checks
+## Production output
 
-- Landing page loaded; all ten directory links were clicked and opened the correct artist page.
-- All ten artist pages had three track entries, zero script elements, and the expected audio-player counts (one for Cup of Joe, zero for the other nine).
-- Previous and next links were clicked for every artist. Both directions wrapped correctly. Desktop floating wraparound arrows were also clicked. Follow-up checks activated an artist link with Enter, clicked a floating arrow at 768px, and clicked a labeled mobile next link at 320px.
-- Static genre navigation was clicked from the header to the genre directory and from the P-Pop group to BINI.
-- All 11 pages were checked at 320, 390, 768, 1440, and 1920px widths with a 900px viewport height: **55 page/viewport combinations**, no document/body horizontal overflow, and no out-of-viewport heading, track-card, audio, or vinyl bounds.
-- At 390px, floating arrows were hidden and both labeled previous/next links were visible. Native controls and 320px page composition were visually reviewed in screenshots.
-- Multo was initially paused, then played through a real click on its native control. Playback time advanced to 1.136786 seconds. A second click paused it. Space on the focused native audio element started and paused playback. Loaded duration was approximately 240.164 seconds. No audio error was reported.
-- The supplied video loaded and advanced independently, with `muted` and `loop` both true. Reduced-motion emulation hid it. A blocked-video request retained a charcoal room and visible artist title.
-- Both supplied cover images loaded successfully. Missing artwork and portraits rendered text placeholders without requests for nonexistent files.
-- Tab focused the visible skip link, with a solid focus outline; Enter navigated to main content. Enter opened the first song-information panel, and Tab reached its scrollable information region.
-- No HTTP errors appeared during the complete artist navigation test.
-- Desktop landing/artist and full 320px artist screenshots were visually reviewed. A browser fallback video-control overlay was found and suppressed with CSS; the native audio controls remain available.
+`python scripts/package-site.py` validates and writes a fresh `dist/` containing only referenced runtime files and the icon license. The reviewed output has 115 files and is approximately 952.3 MiB, primarily supplied audio/video. A production-directory smoke check passed homepage navigation, team counts, song selection, artwork fallback, and local HTTP resource loading. Source documentation, research JSON, Python scripts, Git metadata, and browser artifacts are excluded. Upload the contents of this directory to a static host with MP3/MP4 MIME types and preferably byte-range support.
 
-## Static submission audit
+## Limits of this review
 
-- 11 HTML documents parsed; one main h1 per page, unique IDs, and descriptive alt text on each supplied image.
-- 184 local link/source occurrences resolved to existing submission files or valid anchors; none linked to the original project.
-- Exactly one native audio player, no audio autoplay, and muted decorative video.
-- File inventory permits only HTML, CSS, Markdown, MP3, MP4, and JPEG. No JavaScript, TypeScript, SVG, package manifests, framework files, or build scripts exist in the submission.
-- Every submitted file was scanned as bytes for script elements, scripting URL schemes, selected inline event patterns, and executable embedding tags. Parsed HTML additionally rejected every attribute beginning with `on`. CSS was checked for executable legacy constructs and imports. No executable scripting was found.
-- The three supplied binary assets have the expected JPEG/MP4/MP3 signatures and match original SHA-256 hashes exactly. No SVG, HTML asset, PDF, or unreviewed media format was copied.
-- All artist names, biographies, genre tags, and track titles were taken from the inspected original catalog. No additional title or media was created.
+This is not a full accessibility certification, screen-reader audit, or physical-device test. Firefox, Safari/iOS, external platform-link availability, and the final host's caching/range behavior were not independently tested. Google Fonts remains an optional network dependency with system fallbacks.
 
-## Accessibility and verification limits
+Native HTML/CSS cannot pause a hidden audio player, coordinate audio/video timing, remember Still mode across pages, or stop video decoding merely by hiding it. The interface explains independent playback and asks listeners to pause before switching. Autoplay videos can still consume bandwidth; the original supplied media quality is retained. MP3s now request no preload until listening begins.
 
-Semantic landmarks, heading hierarchy, visible keyboard focus, native keyboard controls, named adjacent links, alt text, text placeholders, and reduced-motion handling are implemented. Main UI links and summaries provide comfortable targets. Calculated text contrast against the lightest common charcoal surface is 12.84:1 for primary text, 7.59:1 for secondary text, and 6.30:1 for the accent. This is not a formal WCAG certification.
+Six tracks use artwork backgrounds. Four are intentionally without MVs (Autumn, Kalapastangan, Mundo, Kabisado); Step Back and Huling Sandali have no supplied MP4. See `content-audit.md` for the exact inventory.
 
-Checks used Chromium on this environment, not every browser or physical device. Screen-reader testing, audible recording quality review, full native seek/volume behavior, and physical-device checks were not performed. Responsive verification measures layout bounds and includes representative visual inspection; it is not a claim that every possible text-zoom or viewport-height combination was tested.
+DUNGKA is stored in Git LFS. Fresh checkouts must run `git lfs pull` before packaging, or use a host checkout that retrieves LFS assets. The validator blocks deployment packaging when only a pointer is present.
 
-CSS hides reduced-motion video but cannot guarantee a hidden autoplay video stops downloading or decoding. Page navigation ends playback. Native control appearance varies by browser. Authorized song lyrics, the other 28 selected recordings, their covers and optional videos, ten portraits, and approval of Skusta Clee's third selection remain unavailable.
-
-## Original project protection
-
-Original-file SHA-256 hashes and inventory were recorded before generation. No original implementation file was modified or deleted, and no Git commit was made. A browser-tool snapshot was accidentally generated in the original folder; only that new test artifact was removed. Final comparison confirmed that all 249 original files and their SHA-256 hashes match the baseline, with no additional files remaining.
+Packaging does not publish the site. No commit or push is part of this UI refresh.

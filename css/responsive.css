@@ -1,49 +1,158 @@
-/* Tablet breakpoint: fewer directory columns and a balanced listening room. */
-@media (max-width: 1000px) {
-  .hero { gap: 2rem; min-height: auto; padding-block: 4rem; }
-  .artist-grid, .genre-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .artist-room { padding: 1.5rem; gap: 1.5rem; min-height: auto; }
-  .track-grid { grid-template-columns: minmax(0, 1fr); }
-  .section-heading { flex-direction: column; align-items: start; gap: 1rem; }
+/* RESPONSIVE LAYOUT — desktop, tablet, mobile, and accessibility overrides. */
+@media (max-width: 1150px) {
+  .header-inner { gap: 1rem; padding-inline: 1rem; }
+  .site-header nav a { padding-inline: .75rem; }
+  .site-header .nav-icon { display: none; }
+  .artist-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .artist-card h3 { font-size: 1.6rem; }
+  .artist-room { gap: 1.5rem; padding: 1.75rem; }
+  .record-region { padding: 1.25rem; }
+  .track-grid { gap: 1rem; }
+  .track-card { padding: 1rem; grid-template-columns: 64px minmax(0, 1fr); column-gap: .75rem; }
+  .track-card .track-artwork { width: 64px; height: 64px; }
+  .track-card h3 { font-size: 1.25rem; }
+  .collection-meta { gap: .75rem; }
+  .collection-meta > span + span { padding-left: .75rem; }
+  .story-card { padding: 1.5rem; }
 }
-/* Phones: visible navigation, stacked content, and comfortable touch targets. */
-@media (max-width: 600px) {
-  :root { --gutter: 1.25rem; }
-  .header-inner { flex-direction: column; align-items: start; gap: 0.5rem; padding-block: 1rem; }
-  .site-header nav { width: 100%; justify-content: space-between; gap: 0.5rem; }
-  .site-header nav a { font-size: 0.875rem; min-width: 44px; }
-  .brand { font-size: 1.6rem; }
-  .hero, .artist-room { grid-template-columns: minmax(0, 1fr); }
-  .hero { padding-block: 3rem; gap: 3rem; }
-  .hero-record .vinyl { width: min(100%, 300px); }
-  .record-region .vinyl { width: min(100%, 220px); }
-  .artist-grid, .genre-grid { grid-template-columns: minmax(0, 1fr); }
-  .directory { padding-block: 3rem; }
-  .artist-page { padding-inline: var(--gutter); }
-  .artist-room { padding: 1.25rem; }
-  .artist-copy h1 { font-size: clamp(2.25rem, 10vw, 3rem); }
-  .artist-arrow { width: 36px; height: 44px; font-size: 1.2rem; }
-  .artist-arrow.previous { left: .15rem; }
-  .artist-arrow.next { right: .15rem; }
-  .adjacent-navigation { flex-direction: column; gap: 0.5rem; }
-  .adjacent-link { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-  .adjacent-link:last-child { text-align: left; }
-  .site-footer { flex-direction: column; }
+@media (max-width: 900px) {
+  .hero { gap: 2rem; padding-block: 3.5rem; }
+  .hero h1 { font-size: clamp(3.4rem, 7vw, 4.5rem); }
+  .hero-actions { flex-wrap: wrap; gap: .75rem 1.5rem; }
+  .edition { display: none; }
+  .hero-record { margin-inline: 0; }
+  .turntable { padding: 1rem; }
+  .genre-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-intro { gap: 2rem; }
+  .about-pillars { grid-template-columns: 1fr; }
+  .story-card { display: grid; grid-template-columns: minmax(160px, .7fr) 1.3fr; gap: .5rem 2rem; }
+  .story-card .card-overline { grid-column: 1; margin-bottom: .6rem; justify-content: start; }
+  .story-card h3 { grid-column: 1; }
+  .story-card p { grid-column: 2; grid-row: 1 / 3; }
+  .inspiration { gap: 2rem; padding: 2rem; }
+  .inspiration h3 { font-size: 2rem; }
+  .team-grid { gap: 1.25rem; }
+  .team-card li { font-size: .8rem; }
+  .artist-room { grid-template-columns: minmax(0, 1fr); }
+  .record-region { display: block; padding: 2rem; }
+  .record-region .vinyl { width: 260px; }
+  .selected-record audio { margin-top: 1rem; }
+  .track-grid { grid-template-columns: 1fr; }
+  .track-card { grid-template-columns: 80px minmax(0, 1fr) minmax(220px, 1fr); padding: 1.5rem; column-gap: 1.5rem; }
+  .track-card .track-artwork { width: 80px; height: 80px; }
+  .track-card .listening-links { grid-column: 3; grid-row: 1 / 4; margin-top: 0; }
+  .track-card h3 { font-size: 1.7rem; }
 }
-/* CSS suppresses decorative video visually; native audio remains available.
-   HTML/CSS cannot conditionally pause the video or prevent its download. */
+@media (max-width: 700px) {
+  :root { --gutter: 1.25rem; --mobile-nav-height: 72px; }
+  html { scroll-padding-top: 1.5rem; }
+  body { padding-bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom, 0px) + 12px); }
+  .site-header { position: relative; padding: .75rem var(--gutter) 0; }
+  .header-inner { min-height: 68px; padding: .65rem .9rem; border-radius: 16px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .brand-name { font-size: 1.8rem; }
+  .brand-kicker { font-size: .5rem; }
+  .motion-label { gap: .4rem; font-size: .65rem; }
+  .motion-label > .bi { display: none; }
+  .site-header nav { position: fixed; z-index: 25; inset: auto .75rem max(.65rem, env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .25rem; height: var(--mobile-nav-height); padding: .5rem; border: 1px solid #e2afba30; border-radius: 20px; background: #211b23f5; box-shadow: 0 0 0 1px #0002, 0 8px 30px #0008; }
+  .site-header nav a { flex-direction: column; gap: .45rem; font-size: .6rem; line-height: 1; min-height: 44px; border-radius: 14px; padding: .5rem; }
+  .site-header .nav-icon { display: block; font-size: 1.1rem; }
+  /* Avoid a filter containing block that would trap the fixed bottom navigation. */
+  .header-inner { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .hero { grid-template-columns: 1fr; gap: 3rem; padding-block: 3rem; }
+  .hero h1 { font-size: clamp(3.6rem, 13vw, 5.8rem); margin-top: 1.25rem; }
+  .hero h1 br:nth-of-type(2) { display: none; }
+  .hero .eyebrow { font-size: .6rem; letter-spacing: .11em; }
+  .intro { font-size: .9rem; }
+  .hero-actions { gap: 1.25rem; margin-top: 1.5rem; }
+  .button { font-size: .75rem; padding-inline: 1.25rem; }
+  .collection-meta { margin-top: 1.75rem; }
+  .collection-meta > span:last-child { flex-basis: 100%; padding: 0; border: 0; }
+  .hero-record { width: min(100% - 1rem, 380px); margin: 1rem auto 0; }
+  .turntable { padding: 1.5rem; }
+  .hero-record::before { inset: 0; }
+  .record-sleeve { inset: -.5rem .75rem 2rem; transform: rotate(-5deg); }
+  .record-wordmark strong { font-size: 1.8rem; }
+  .collection-strip { gap: .5rem; font-size: .5rem; letter-spacing: .04em; text-align: center; }
+  .collection-strip span { display: flex; flex-direction: column; gap: .65rem; }
+  .collection-strip .bi { margin: 0; }
+  .directory { padding-block: 3.5rem; }
+  .section-heading { gap: 1rem; align-items: start; flex-direction: column; margin-bottom: 1.75rem; }
+  .section-aside { text-align: left; font-size: .8rem; }
+  .section-aside br { display: none; }
+  .section-index { font-size: .55rem; margin-top: .5rem; }
+  .artist-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; }
+  .artist-card { padding: .35rem .35rem .75rem; border-radius: 13px; }
+  .artist-image { border-radius: 8px; }
+  .card-heading { margin: .8rem .35rem .3rem; }
+  .artist-card h3 { font-size: 1.25rem; }
+  .artist-card p { font-size: .58rem; margin-inline: .35rem; }
+  .card-link { font-size: .55rem; margin-inline: .35rem; gap: .4rem; }
+  .directory-source { line-height: 1.8; font-size: .6rem; }
+  .genre-grid { gap: .75rem; }
+  .genre-group { padding: 1.25rem; }
+  .genre-group h3 { font-size: 1.5rem; }
+  .genre-group a { font-size: .7rem; }
+  .about-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-description { font-size: .85rem; }
+  .story-card { display: block; padding: 1.5rem; }
+  .story-card .card-overline { justify-content: space-between; margin-bottom: 1.5rem; }
+  .inspiration { grid-template-columns: 1fr; padding: 1.5rem; }
+  .inspiration-mark { width: 190px; margin: .5rem auto; }
+  .inspiration-mark span { font-size: 1.9rem; }
+  .team-section { padding-top: 3rem; }
+  .team-section h3 { font-size: 2.1rem; }
+  .team-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .team-card > p { max-width: none; }
+  .team-card ul { margin-top: 1rem; }
+  .team-card li { font-size: .9rem; }
+  .listening-guide { grid-template-columns: 1fr; gap: 1.5rem; padding-block: 2.5rem; }
+  .about-outro { align-items: start; flex-direction: column; gap: 1.5rem; }
+  .about-outro > span { font-size: 1.8rem; }
+  .breadcrumb { padding-block: .75rem; gap: .5rem; font-size: .65rem; }
+  .artist-room { padding: 1.25rem; gap: 1.5rem; border-radius: 20px; }
+  .artist-room::before { background: linear-gradient(180deg, #141115eb, #141115cc); }
+  .artist-identity { gap: .8rem; }
+  .artist-avatar { width: 44px; height: 44px; flex-basis: 44px; }
+  .biography { font-size: .8rem; }
+  .song-vinyls { gap: .5rem; }
+  .song-option { width: 33.333%; padding: .75rem .3rem; font-size: .65rem; }
+  .mini-vinyl { width: 58px; }
+  .record-region { padding: 1.5rem 1rem; }
+  .record-region .vinyl { width: min(100%, 235px); }
+  .selected-song-title { font-size: 1.6rem; }
+  .track-card { grid-template-columns: 72px minmax(0, 1fr); padding: 1.25rem; column-gap: 1rem; }
+  .track-card .track-artwork { width: 72px; height: 72px; }
+  .track-card h3 { font-size: 1.5rem; }
+  .track-card .listening-links { grid-column: 1 / -1; grid-row: auto; margin-top: 1.25rem; }
+  .tracks-section { padding-block: 2.5rem; }
+  .tracks-section h2 { font-size: 2.5rem; }
+  .adjacent-navigation { gap: .65rem; }
+  .adjacent-link { flex: 1; align-items: center; gap: .6rem; padding: .75rem; font-size: .65rem; }
+  .site-footer { flex-wrap: wrap; gap: 1.5rem; padding-block: 2rem; }
+  .footer-note { order: 3; flex-basis: 100%; text-align: left; }
+}
+@media (max-width: 360px) {
+  .motion-label > span:not(.switch-track) { font-size: .6rem; }
+  .artist-card h3 { font-size: 1.1rem; }
+  .genre-grid { grid-template-columns: 1fr; }
+  .artist-card .card-link { font-size: .5rem; }
+  .hero-actions { gap: .75rem; }
+  .quiet-link { font-size: .7rem; }
+}
+@media (hover: none) {
+  .artist-card:hover, .song-option:hover, .genre-group:hover, .button:hover { transform: none; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .background-video { display: none; }
+  html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .artist-room .background-video { display: none !important; }
 }
-
-/* Long biographies and platform labels must shrink with their grid column. */
-@media (max-width: 1000px) and (min-width: 601px) {
-  .artwork-title { font-size: 1.1rem; }
-  .artwork-placeholder .small-note { font-size: 0.75rem; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel, .record-region { background: #211c23; }
 }
-@media (max-width: 600px) {
-  .artist-portrait.portrait-placeholder { width: 100%; }
-  .breadcrumb { gap: 0.5rem; }
-  .card-heading { flex-wrap: wrap; }
+@media (forced-colors: active) {
+  .glass-panel, .artist-card, .track-card, .song-option, .genre-group { border: 1px solid CanvasText; }
+  .site-header nav a[aria-current], .site-header nav .nav-active { outline: 1px solid Highlight; }
+  .artist-room::before { background: Canvas; }
 }

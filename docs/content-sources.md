@@ -1,3 +1,5 @@
+> Historical research record. For the current implementation and media counts, see [content-audit.md](content-audit.md) and [html-css-explanation.md](html-css-explanation.md). Early placeholder/missing-file notes below describe the project at the time they were written.
+
 # Content sources — Milestone 11
 
 Accessed: 2026-10-13. Original English summaries; no song lyrics copied. Existing titles, artist order, collaborators, and genre tags were preserved.

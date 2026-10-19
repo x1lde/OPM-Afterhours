@@ -1,0 +1,7 @@
+# Local previews and generated production output
+.playwright-mcp/
+dist/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
