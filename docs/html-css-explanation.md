@@ -158,6 +158,10 @@ Use an actual file and the correct slot number. Keep the cover fallback. Then va
 
 Edit the corresponding `.team-card` list or About paragraph in `index.html`. The team names are ordinary text; they are not a separate data file.
 
+Each member row pairs a `.member-avatar` circle with a `.member-name`. Photos live in `assets/members/`; `patrick.jpg` belongs to Patrick Andrew Manzanero, `andrew.jpg` to Jem Andrew Fajardo, and `jr.jpg` to Leonido Casapao Jr. The other filenames match the member's name. Replace the matching photo to update a portrait. The inline `--portrait-scale`, `--portrait-position`, and `--portrait-origin` CSS variables adjust its crop without changing the source image. Images have fixed dimensions and lazy loading; empty alt text avoids repeating the adjacent name to screen readers.
+
+The three role cards sit side by side on desktop. At 900px and below, role cards stack with members in columns; at 700px and below, members form a single vertical list.
+
 ### Add an icon
 
 Use a Bootstrap Icons class from the locally installed 1.13.2 set:

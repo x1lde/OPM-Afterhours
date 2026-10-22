@@ -158,6 +158,16 @@ The packaging script creates a `dist/` folder containing the files needed to hos
 
 You can upload the contents of that folder to a static hosting service.
 
+For Netlify, drag the **`dist` folder** into [Netlify Drop](https://app.netlify.com/drop), or into the deployment drop zone of your existing Netlify project. `index.html` is directly inside the folder, alongside `artists/`, `assets/`, and `css/`. No build command is needed for this upload.
+
+The complete package includes the original audio and video and is approximately **953 MiB**. [Netlify's upload guidance](https://docs.netlify.com/start/quickstarts/netlify-drop-quickstart/#troubleshooting-tips) says deployments under 50 MB work best and individual files over 10 MB may stall. If drag-and-drop stalls, use the Netlify CLI from the project root instead (requires Node.js and Netlify sign-in):
+
+```bash
+npx netlify-cli deploy --dir=dist --prod
+```
+
+Select your intended Netlify project when prompted. `dist/` is generated locally and excluded from Git; the source files, member photos, and packaging script are tracked so the package can be recreated.
+
 **Important:** If `dist/` already exists, the packaging script will not overwrite it. Move or remove the existing folder before creating a new package.
 
 ## Additional Documentation

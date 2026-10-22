@@ -185,13 +185,18 @@ section[id] { scroll-margin-top: 1rem; }
 .inspiration a { color: var(--accent); text-decoration-color: #e2afba44; }
 .team-section { padding-top: 4rem; }
 .team-section h3 { font-size: 2.5rem; }
-.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
-.team-card { min-width: 0; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.team-card { min-width: 0; padding: 1.5rem; border: 1px solid var(--glass-border); border-radius: 20px; background: linear-gradient(145deg, #e2afba0b, #ffffff02); box-shadow: inset 0 1px #ffffff06; }
 .team-role { display: flex; gap: .75rem; align-items: center; }
-.team-role .bi { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: #e2afba0d; color: var(--accent); }
-.team-card > p { margin-top: .85rem; font-size: .75rem; color: var(--muted); max-width: 30ch; }
-.team-card ul { padding: 0; list-style: none; margin: 1.5rem 0 0; }
-.team-card li { padding-block: .6rem; border-top: 1px solid #ffffff09; font-size: .85rem; }
+.team-role .bi { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: #e2afba12; color: var(--accent); }
+.team-count { margin-left: auto; color: var(--muted); font-family: var(--label-font); font-size: .7rem; letter-spacing: .08em; }
+.team-card > p { min-height: 3.4em; margin-top: .85rem; font-size: .8rem; color: var(--muted); max-width: 30ch; }
+.team-card ul { padding: 0; list-style: none; margin: 1.25rem 0 0; }
+.team-card li { display: flex; align-items: center; gap: .9rem; padding-block: .85rem; border-top: 1px solid #ffffff0d; }
+.member-avatar { display: block; flex: 0 0 64px; width: 64px; height: 64px; overflow: hidden; border: 2px solid var(--surface); border-radius: 50%; background: var(--raised); box-shadow: 0 0 0 1px #e2afba55; }
+/* Crop the supplied portraits in CSS; keep the original photos intact. */
+.member-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: var(--portrait-position, 50% 20%); transform: scale(var(--portrait-scale, 1)); transform-origin: var(--portrait-origin, 50% 20%); }
+.member-name { min-width: 0; font-size: .9rem; font-weight: 500; line-height: 1.5; overflow-wrap: anywhere; }
 .listening-guide { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; padding-block: 4rem; margin-top: 3rem; border-block: 1px solid var(--glass-border); }
 .listening-guide h3 { font-size: 2.5rem; margin-top: 1rem; }
 .guide-questions details { border-bottom: 1px solid var(--glass-border); }

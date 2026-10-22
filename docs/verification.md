@@ -37,3 +37,12 @@ The original highlight followed only the URL fragment. CSS view timelines now tr
 ## Subsequent motion update ? untested
 
 Added same-document homepage anchors, scroll-entry reveals, disclosure and record entrances, and hover refinements. Source and dist were updated. Browser testing and validation were explicitly skipped at the owner's request; the earlier results above predate these motion changes.
+
+## Member portraits and distribution — October 23, 2026
+
+- Added all eight supplied member portraits, including Mateo, with circular crops and adjacent full names. Role cards now have clearer grouping and responsive member rows.
+- Inspected desktop and mobile rendering in Chromium. Checks across 320–1440px passed without horizontal page overflow or clipped member names; all eight portraits loaded and remained 64px circles.
+- Verified all eight profiles with JavaScript disabled and reduced motion enabled; role-card animations were disabled.
+- `python scripts/package-site.py` passed validation and created a fresh `dist/` with 123 files (952.7 MiB). SHA-256 comparisons confirmed that every packaged file matches its source. The earlier generated folder was retained locally at `.playwright-mcp/dist-before-members-20261023/`.
+- Served the packaged homepage and followed an artist link: all eight member portraits loaded, the artist page included its three audio players, and no requested local resource returned an HTTP error.
+- `dist/index.html` is ready for a static upload. The package includes the original large media files; Netlify drag-and-drop publication itself was not performed. README includes the Netlify upload instructions and CLI fallback for large uploads.
